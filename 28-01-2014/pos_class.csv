@@ -2,7 +2,9 @@
 /usr/bin/extract_fastq
 /usr/bin/extract_qual
 /usr/bin/faum-iso-to-cd
+/usr/bin/fenix-fxc
 /usr/bin/grib_convert
+/usr/bin/h5dump
 /usr/bin/jbofihe
 /usr/bin/mksource
 /usr/bin/pforth
@@ -18,6 +20,7 @@
 /usr/bin/trcsort
 /usr/bin/trisetcmp
 /usr/bin/usepackage
+/usr/bin/regconvert
 /usr/bin/vadm
 /usr/bin/vbind
 /usr/bin/vgrep

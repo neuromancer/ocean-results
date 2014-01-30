@@ -1,17 +1,17 @@
-dir="28-01-2014"
+dir = "28-01-2014"
 
-mycon<-gzcon(gzfile(paste(dir, "traces.csv.gz", sep="/"), open="r"))
+mycon = gzcon(gzfile(paste(dir, "traces.csv.gz", sep="/"), open="r"))
 traces = read.csv(textConnection(readLines(mycon)))[,-1]
-class = read.csv(paste(dir, "class.csv", sep="/"))
+pos_class = read.csv(paste(dir, "pos_class.csv", sep="/"))
 
-train = traces[,1] %in% class[,1]
+pos_train = traces[,1] %in% pos_class[,1]
 
-library(e1071)
+#library(e1071)
 
-svm.model<-svm(traces[train,-1],y=NULL, type='one-classification',nu=0.1,kernel="radial")
+#svm.model<-svm(traces[train,-1],y=NULL, type='one-classification',nu=0.1,kernel="radial")
 
 #svm.pred_tra<-predict(svm.model, traces[train,-1])
-svm.pred_all<-predict(svm.model, traces[,-1])
+#svm.pred_all<-predict(svm.model, traces[,-1])
 
 #library("kohonen")
 
