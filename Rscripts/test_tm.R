@@ -1,8 +1,12 @@
-library("e1071")
-#library("caret")
-library("tm")
+options(warn=-1)
 
-options(mc.cores=1)
+msg.trap <- capture.output( suppressMessages( library("e1071") ))
+msg.trap <- capture.output( suppressMessages( library("tm") ))
+
+#options(mc.cores=1)
+
+args <- commandArgs(trailingOnly = TRUE)
+msize = as.numeric(args[1])
 
 dir = "../25-05-2014"
 
@@ -16,6 +20,8 @@ if (! ("mycon" %in% ls())) {
   buggy_program_events = buggy_program_events[!is.na(x),]
 
 }
+
+#quit()
 
 programs = buggy_program_events[,1]
 mutations = buggy_program_events[,2]
@@ -57,18 +63,21 @@ evs_vars = names(evs_dm_df) # unused
 
 sink()
 
+print(evs_vars)
+
 mut_robust_cases = mut_dm_df[mut_dm_df$class == "R",]
 mut_buggy_cases  = mut_dm_df[mut_dm_df$class == "B",]
 
-evs_robust_cases = evs_dm_df[mut_dm_df$class == "R",]
-evs_buggy_cases  = evs_dm_df[mut_dm_df$class == "B",]
+evs_robust_cases = evs_dm_df[evs_dm_df$class == "R",]
+evs_buggy_cases  = evs_dm_df[evs_dm_df$class == "B",]
 
 aug_robust_cases = cbind(mut_robust_cases[,names(mut_robust_cases) != "class"], evs_robust_cases) 
 aug_buggy_cases  = cbind(mut_buggy_cases[,names(mut_buggy_cases) != "class"], evs_buggy_cases)
 
 print(names(aug_buggy_cases))
 
-msizes = seq(600,0,-100)#(rev(c(1, 50, 100, 150, 200, 250, 300)))
+#msizes = seq(600,0,-100)
+msizes = c(msize) #seq(0,600,100)
 
 res_mut_only = c()
 res_mut_evs  = c()
@@ -139,6 +148,9 @@ for (n in msizes) {
 
     to_train = xy_train[,intersect(names(xy_train),mut_vars)]
     m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+    #m = mctune(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+    
+
     model = m$best.model
        
     z = predict(model,x_test)
