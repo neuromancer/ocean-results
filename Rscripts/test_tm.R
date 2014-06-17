@@ -172,59 +172,24 @@ for (n in msizes) {
 
     to_train = xy_train[,intersect(names(xy_train),mut_vars)]
     to_test = x_test[,intersect(names(x_test),mut_vars)]
-
-    #form <- as.formula(paste('class', paste(names(to_train), collapse='+'), sep='~'))
-
-    #n <- names(to_train)
-    #f <- (paste("class ~", paste(n[!n %in% "class"], collapse = " + ")))
-    #print(f)
-      #to_train[,"class"] = as.integer(to_train[,"class"])-1
-      #print(c(dim(to_train), dim(to_test)))
-
-      #sh = 0.001
-      #print(sh)
-      #print("mutation only")
-      m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
-
-      #m = tune(gbm, train.x = to_train[,names(to_train) != "class"], train.y = to_train[,"class"], ranges = list(distribution = c("adaboost","bernulli")), n.cores = 5, n.trees = 200, shrinkage = sh, interaction.depth = 2, predict.func = function(m,d) predict.gbm(m,d, n.trees=200))
-      #m = gbm(class~., data = to_train, distribution = "adaboost", n.cores = 5, n.trees = 600, shrinkage = sh, interaction.depth = 2)
-      #print(gbm.perf(m, plot.it = F,method="OOB"))
-      #print(m)
-      #model = m
-
-      #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
-      #model = m$best.model
-     
-      #z = predict.gbm(model,x_test, n.trees=600)
-      #cm = confusion(z>0, (as.integer(y_test)-1)>0) 
-    
-      mut_only_err = mut_only_err + m$best.performance #cm$misclass.prob
-      #print(mut_only_err / r)
+   
+    m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
+    #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+   
+    mut_only_err = mut_only_err + m$best.performance
+    #print(mut_only_err / r)
     # mutation and event variables  
  
-      to_train = xy_train
-      to_test = x_test
-      #to_train[,"class"] = as.integer(to_train[,"class"])-1
+    to_train = xy_train
+    to_test = x_test
 
-      #print("mutation + events")
+    #print("mutation + events")
 
-      m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
-      #m = gbm(class~., data = to_train, distribution = "adaboost", n.cores = 5, n.trees = 600, shrinkage = sh, interaction.depth = 2) 
-      #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
-      #model = m$best.model
-      #print(m)
-      #model = m
-
-      #z = predict.gbm(model,x_test, n.trees=600)
-      #cm = confusion(z>0, (as.integer(y_test)-1)>0)
-      
-       
-      #z = predict(model,x_test)
-    
-    
-      #print((table(pred=z, true=y_test)))
-      mut_evs_err = mut_evs_err + m$best.performance#cm$misclass.prob
-      #print(mut_evs_err / r)
+    m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
+    #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+   
+    mut_evs_err = mut_evs_err + m$best.performance
+    #print(mut_evs_err / r)
 
   }
   
