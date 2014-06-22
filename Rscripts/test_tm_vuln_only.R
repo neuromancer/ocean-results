@@ -2,9 +2,9 @@ options(warn=-1)
 
 msg.trap <- capture.output( suppressMessages( library("e1071") ))
 msg.trap <- capture.output( suppressMessages( library("tm") ))
-msg.trap <- capture.output( suppressMessages( library("gbm") ))
+#msg.trap <- capture.output( suppressMessages( library("gbm") ))
 #library("RWeka")
-options(mc.cores=10)
+options(mc.cores=2)
 #options(mc.cores=1)
 
 confusion <- function(a, b){ # instead of caret
@@ -105,6 +105,8 @@ evs_dm_df =  as.data.frame(inspect(evs_dm))
 
 evs_dm_df["program"] = c(buggy_programs, robust_programs)
 evs_dm_df["class"] = factor( c(rep("B",length(buggy_programs)), rep("R",length(robust_programs))), levels = c("R","B"))
+evs_dm_df["trace"] = sapply(FUN = length, strsplit( c(buggy_events,robust_events) , split = " ")) 
+#length(strsplit("abc def  ", split = " ")[[1]])substr( c(buggy_events,robust_events),1,100) 
 
 evs_vars = names(evs_dm_df)
 
@@ -127,7 +129,7 @@ print(evs_vars_to_remove)
 evs_dm_df = evs_dm_df[,setdiff(evs_vars,evs_vars_to_remove)]
 evs_vars = names(evs_dm_df)
 
-print(evs_vars)
+#print(evs_vars)
 
 #quit()
 
@@ -202,17 +204,19 @@ for (n in msizes) {
 
     #print(paste("intersection train and test:", intersect(train_programs,test_programs)))i
 
-    buggy_train = buggy_cases[buggy_cases$program %in% train_programs,names(buggy_cases) != "program"]
-    buggy_test  = buggy_cases[buggy_cases$program %in% test_programs,names(buggy_cases) != "program"]
+    buggy_train = buggy_cases[buggy_cases$program %in% train_programs,]#,names(buggy_cases) != "program"]
+    buggy_test  = buggy_cases[buggy_cases$program %in% test_programs,]#,names(buggy_cases) != "program"]
 
-    robust_train = robust_cases[robust_cases$program %in% train_programs,names(robust_cases) != "program"]
-    robust_test  = robust_cases[robust_cases$program %in% test_programs,names(robust_cases) != "program"]
+    robust_train = robust_cases[robust_cases$program %in% train_programs,]#,names(robust_cases) != "program"]
+    robust_test  = robust_cases[robust_cases$program %in% test_programs,]#,names(robust_cases) != "program"]
  
-    buggy_train = sample(buggy_train)
-    buggy_test = sample(buggy_test)
+    
+    #rownames(buggy_train)
+    buggy_train = buggy_train[sample(rownames(buggy_train)),]
+    buggy_test = buggy_test[sample(rownames(buggy_test)),]
 
-    robust_train = sample(robust_train)
-    robust_test = sample(robust_test)
+    robust_train = robust_train[sample(rownames(robust_train)),]
+    robust_test = robust_test[sample(rownames(robust_test)),]
 
     train_size = min(nrow(buggy_train), nrow(robust_train))
     test_size = min(nrow(buggy_test), nrow(robust_test))
@@ -223,8 +227,15 @@ for (n in msizes) {
 
     print(c(train_size, test_size))
 
-    train = rbind(buggy_train[1:train_size,], robust_train[1:train_size,])
-    test  = rbind(buggy_test[1:test_size,], robust_test[1:test_size,])
+    extravs = c("program","trace")
+
+    train = rbind(buggy_train[1:train_size,setdiff(names(buggy_train),extravs)], robust_train[1:train_size,setdiff(names(robust_train),extravs)])
+    test  = rbind(buggy_test[1:test_size,setdiff(names(buggy_test),extravs)], robust_test[1:test_size,setdiff(names(robust_test),extravs)])
+
+    test_programs = c(buggy_test[1:test_size,"program"], robust_test[1:test_size,"program"])
+    test_traces = c(buggy_test[1:test_size,"trace"], robust_test[1:test_size,"trace"])
+    #print(test_programs)
+    #quit()
 
     #print(any(is.na(train)))
     varnot0 = names(train)[unlist(lapply(train,function(x) 0 != var(x)))]
@@ -262,15 +273,20 @@ for (n in msizes) {
 
     #print("mutation + events")
 
-    m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, tunecontrol=tcont)
+    #m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, tunecontrol=tcont)
     #m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
-    #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+    m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
     print(m)
 
-    #model = m$best.model
+    model = m$best.model
     #scores = t(abs(t(model$coefs) %*% model$SV))
     #inds = sort(scores, decreasing=TRUE, index.return = TRUE)$i
-    #print(names(scores[inds,][1:10]))    
+    #print(names(scores[inds,][1:10]))
+
+    z = predict(model,x_test)
+   
+    print(data.frame(program = test_programs, trace=test_traces, pred=z))
+    print(confusion(z,y_test)) 
    
     mut_evs_err = mut_evs_err + m$best.performance
     #print(mut_evs_err / r)
