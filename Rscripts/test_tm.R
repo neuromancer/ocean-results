@@ -173,8 +173,10 @@ for (n in msizes) {
     to_train = xy_train[,intersect(names(xy_train),mut_vars)]
     to_test = x_test[,intersect(names(x_test),mut_vars)]
    
-    m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
+    m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, tunecontrol=tcont)
+    #m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
     #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+    print(m)
    
     mut_only_err = mut_only_err + m$best.performance
     #print(mut_only_err / r)
@@ -185,8 +187,10 @@ for (n in msizes) {
 
     #print("mutation + events")
 
-    m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
+    m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, tunecontrol=tcont)
+    #m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
     #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+    print(m)
    
     mut_evs_err = mut_evs_err + m$best.performance
     #print(mut_evs_err / r)
