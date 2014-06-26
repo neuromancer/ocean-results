@@ -2,11 +2,29 @@ options(warn=-1)
 
 msg.trap <- capture.output( suppressMessages( library("e1071") ))
 msg.trap <- capture.output( suppressMessages( library("tm") ))
-
+msg.trap <- capture.output( suppressMessages( library("gbm") ))
+#library("RWeka")
+options(mc.cores=10)
 #options(mc.cores=1)
 
+confusion <- function(a, b){ # instead of caret
+  tbl <- table(pred=a, true=b)
+  mis <- 1 - sum(diag(tbl))/sum(tbl)
+  list(table = tbl, misclass.prob = mis)
+  }
+
+
+# Argument handling
+
+wfs = data.frame(1)
+
+wfs$weightBin   = weightBin
+wfs$weightTf    = weightTf
+wfs$weightTfIdf = weightTfIdf
+
 args <- commandArgs(trailingOnly = TRUE)
-msize = as.numeric(args[1])
+msize = abs(as.numeric(args[1]))
+wf = wfs[,args[2]]
 
 dir = "../25-05-2014"
 
@@ -37,8 +55,8 @@ uniq_programs = levels(factor(programs))
 mut_corpus = Corpus(VectorSource(c(mutations)))
 evs_corpus = Corpus(VectorSource(c(events)))
 
-print(mut_corpus)
-print(evs_corpus)
+#print(mut_corpus)
+#print(evs_corpus)
 
 mut_dm = DocumentTermMatrix(mut_corpus)
 
@@ -53,17 +71,23 @@ mut_dm_df["size"] = sizes
 
 sink()
 
-evs_dm = DocumentTermMatrix(evs_corpus, control = list(bounds = list(global = c(1,Inf))))
+#BigramTokenizer <- function(x) {RWeka::NGramTokenizer(x, RWeka::Weka_control(min = 1, max = 5, delimiters="  "))}
+evs_dm = DocumentTermMatrix(evs_corpus, control = list(bounds = list(global = c(1,Inf)), weighting = wf))
 
 sink("/dev/null")
 
 evs_dm_df =  as.data.frame(inspect(evs_dm))
+
+#evs_vars = names(sort(colSums(evs_dm_df), decreasing=T)[1:3000])
+#evs_dm_df = evs_dm_df[,evs_vars]
+
 evs_dm_df["class"] = cats
 evs_vars = names(evs_dm_df) # unused
 
 sink()
 
-print(evs_vars)
+#print(evs_dm)
+#print(names(evs_dm_df))
 
 mut_robust_cases = mut_dm_df[mut_dm_df$class == "R",]
 mut_buggy_cases  = mut_dm_df[mut_dm_df$class == "B",]
@@ -74,7 +98,7 @@ evs_buggy_cases  = evs_dm_df[evs_dm_df$class == "B",]
 aug_robust_cases = cbind(mut_robust_cases[,names(mut_robust_cases) != "class"], evs_robust_cases) 
 aug_buggy_cases  = cbind(mut_buggy_cases[,names(mut_buggy_cases) != "class"], evs_buggy_cases)
 
-print(names(aug_buggy_cases))
+#print(names(aug_buggy_cases))
 
 #msizes = seq(600,0,-100)
 msizes = c(msize) #seq(0,600,100)
@@ -101,7 +125,7 @@ for (n in msizes) {
   uniq_programs = levels(factor(c(aug_robust_cases$program, aug_buggy_cases$program)))
 
   np = length(uniq_programs)
-  print(paste("number of programs",np,"selected with at most",n,"events"))
+  #print(paste("number of programs",np,"selected with at most",n,"events"))
 
   for (r in 1:nrep) {
     
@@ -111,7 +135,7 @@ for (n in msizes) {
     train_programs = uniq_programs[psample[1:as.integer(np*0.75)]]
     test_programs = uniq_programs[psample[(as.integer(np*0.75)+1):np]]
 
-    print(paste("intersection train and test:", intersect(train_programs,test_programs)))
+    #print(paste("intersection train and test:", intersect(train_programs,test_programs)))
 
     buggy_train = buggy_cases[buggy_cases$program %in% train_programs,names(buggy_cases) != "program"]
     buggy_test  = buggy_cases[buggy_cases$program %in% test_programs,names(buggy_cases) != "program"]
@@ -128,7 +152,7 @@ for (n in msizes) {
     train_size = min(nrow(buggy_train), nrow(robust_train))
     test_size = min(nrow(buggy_test), nrow(robust_test))
 
-    print(c(train_size, test_size))
+    #print(c(train_size, test_size))
 
     train = rbind(buggy_train[1:train_size,], robust_train[1:train_size,])
     test  = rbind(buggy_test[1:test_size,], robust_test[1:test_size,])
@@ -138,8 +162,8 @@ for (n in msizes) {
     xy_train = train[,varnot0]
     xy_test  = test[,varnot0]
 
-    x_test = test[,names(test) != "class"]
-    y_test  = test[,"class"]
+    x_test = xy_test[,names(xy_test) != "class"]
+    y_test  = xy_test[,"class"]
 
     tcont = tune.control(sampling='fix')
     
@@ -147,29 +171,25 @@ for (n in msizes) {
     # mutation only variables    
 
     to_train = xy_train[,intersect(names(xy_train),mut_vars)]
-    m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
-    #m = mctune(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
-    
-
-    model = m$best.model
-       
-    z = predict(model,x_test)
-    
-    print((table(pred=z, true=y_test)))
-    mut_only_err = mut_only_err + m$best.performance
-    print(mut_only_err / r)
+    to_test = x_test[,intersect(names(x_test),mut_vars)]
    
+    m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
+    #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+   
+    mut_only_err = mut_only_err + m$best.performance
+    #print(mut_only_err / r)
     # mutation and event variables  
  
     to_train = xy_train
-    m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
-    model = m$best.model
-       
-    z = predict(model,x_test)
-    
-    print((table(pred=z, true=y_test)))
+    to_test = x_test
+
+    #print("mutation + events")
+
+    m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
+    #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
+   
     mut_evs_err = mut_evs_err + m$best.performance
-    print(mut_evs_err / r)
+    #print(mut_evs_err / r)
 
   }
   
