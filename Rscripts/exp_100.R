@@ -91,15 +91,15 @@ aug_buggy_cases  = evs_buggy_cases#[,names(evs_buggy_cases) != "class"]
 
 # real test
 
-mycon = gzcon(gzfile(paste(dir, "sample_traces.csv.gz", sep="/"), open="r"))  
+dir = "../30-06-2014"
+
+mycon = gzcon(gzfile(paste(dir, "test_sample.csv.gz", sep="/"), open="r"))  
 sample_program_events = read.csv(textConnection(readLines(mycon)), sep="\t", header = F)
 sample_program_events = na.omit(sample_program_events)
 
 sample_programs = sample_program_events[,1]
 sample_program_events = sample_program_events[,3]
-sample_program_sizes = sapply(FUN = length, strsplit( sample_program_events , split = " "))
-
-#print(sample_program_sizes[sample_programs == "/usr/bin/a+"])
+#sample_program_sizes = sapply(FUN = length, strsplit( sample_program_events , split = " "))
 #quit()
 
 evs_corpus = Corpus(VectorSource(c(sample_program_events)))
@@ -120,6 +120,7 @@ r_evs_dm_df[,setdiff(evs_vars,r_evs_vars)] = 0
 real_test = r_evs_dm_df
 
 print(dim(real_test))
+
 
 #quit()
 
@@ -145,11 +146,15 @@ for (n in msizes) {
 
   #print(c(aug_robust_cases$program, aug_buggy_cases$program))
   #aaaa
-  buggy_uniq_programs = levels(factor(c(aug_buggy_cases$program)))
+  buggy_uniq_programs = setdiff(levels(factor(c(aug_buggy_cases$program))) , sample_programs)
   buggy_np = length(buggy_uniq_programs)
 
-  robust_uniq_programs = levels(factor(c(aug_robust_cases$program)))
+  print(buggy_uniq_programs)
+
+  robust_uniq_programs = setdiff( levels(factor(c(aug_robust_cases$program))), sample_programs)
   robust_np = length(robust_uniq_programs)
+
+  print(robust_uniq_programs)
 
   #print(c(buggy_np,robust_np))
 
@@ -159,16 +164,17 @@ for (n in msizes) {
     
     gc() 
 
-    cont = TRUE
-    while (cont) {
+    #cont = TRUE
+    #while (cont) {
 
     buggy_psample = sample(buggy_np)
     robust_psample = sample(robust_np)
 
-    
-    train_programs = c( buggy_uniq_programs[buggy_psample[1:(buggy_np-5)]] , robust_uniq_programs[robust_psample[1:(robust_np-5)]] )
-    test_programs = c( buggy_uniq_programs[buggy_psample[(buggy_np-5+1):buggy_np]] , robust_uniq_programs[robust_psample[(robust_np-5+1):robust_np]] )
+    ts = 1
+    train_programs = c( buggy_uniq_programs[buggy_psample[1:(buggy_np-ts)]] , robust_uniq_programs[robust_psample[1:(robust_np-ts)]] )
+    test_programs = c( buggy_uniq_programs[buggy_psample[(buggy_np-ts+1):buggy_np]] , robust_uniq_programs[robust_psample[(robust_np-ts+1):robust_np]] )
    
+    #print("selected programs:")
     #print(c(train_programs))
     #print(c(test_programs))
 
@@ -179,21 +185,25 @@ for (n in msizes) {
 
     robust_train = robust_cases[robust_cases$program %in% train_programs,]#,names(robust_cases) != "program"]
     robust_test  = robust_cases[robust_cases$program %in% test_programs,]#,names(robust_cases) != "program"]
- 
-    
+  
     #rownames(buggy_train)
     buggy_train = buggy_train[sample(rownames(buggy_train)),]
     buggy_test = buggy_test[sample(rownames(buggy_test)),]
 
     robust_train = robust_train[sample(rownames(robust_train)),]
     robust_test = robust_test[sample(rownames(robust_test)),]
+ 
+    #print(buggy_train)
+    #print(nrow(buggy_train))
+    #print(robust_train)
+    #print(nrow(robust_train))
 
     train_size = min(nrow(buggy_train), nrow(robust_train))
     test_size = min(nrow(buggy_test), nrow(robust_test))
 
-    if (test_size >= 50)
-       cont = FALSE
-    }
+    #if (test_size >= 50)
+    #   cont = FALSE
+    #}
 
     print(c(train_size, test_size))
 
@@ -212,6 +222,7 @@ for (n in msizes) {
     #print("class" %in% varnot0)
     #quit()
     #varnot0 = c(na.omit(varnot0), "class")
+    print
 
     xy_train = train[,varnot0]
     xy_test  = test[,varnot0]
@@ -252,7 +263,7 @@ for (n in msizes) {
     z = predict(model,x_real_test)
     result = data.frame(program = sample_programs, pred=z)
     scores = data.frame(score=c())
-    sizes = data.frame(size=c())
+    #sizes = data.frame(size=c())
 
     for (program in levels(factor(sample_programs))) {
       #print(program)
@@ -261,8 +272,8 @@ for (n in msizes) {
       #print(votes$B)
       scores[program,"score"] = votes[2][1]
 
-      rsizes = sample_program_sizes[sample_programs == program]
-      sizes[program,"size"] = mean(rsizes)
+      #rsizes = sample_program_sizes[sample_programs == program]
+      #sizes[program,"size"] = mean(rsizes)
 
       #print(
       #print(table(result[result$program == program,"pred"]))
@@ -275,7 +286,7 @@ for (n in msizes) {
     #print(ids)
     rownames(scores) = rownames(scores)[ids]
     scores[,"score"] = scores[ids,"score"]
-    sizes[,"size"] = sizes[ids,"size"]
+    #sizes[,"size"] = sizes[ids,"size"]
     print(data.frame(score=scores))#, size=sizes))
     
     #print(scores[order(scores, decreasing=T),])
