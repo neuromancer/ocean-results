@@ -2,6 +2,7 @@ options(warn=-1)
 
 msg.trap <- capture.output( suppressMessages( library("e1071") ))
 msg.trap <- capture.output( suppressMessages( library("tm") ))
+msg.trap <- capture.output( suppressMessages( library("randomForest") ))
 #msg.trap <- capture.output( suppressMessages( library("gbm") ))
 #library("RWeka")
 options(mc.cores=10)
@@ -72,18 +73,18 @@ buggy_program_events = na.omit(buggy_program_events)
 robust_programs = robust_program_events[,1]
 robust_events = robust_program_events[,3]
 
-print(dim(buggy_program_events))
-print(dim(robust_program_events))
+#print(dim(buggy_program_events))
+#print(dim(robust_program_events))
 
 buggy_programs = buggy_program_events[,1]
 buggy_events = buggy_program_events[,3]
 
 evs_corpus = Corpus(VectorSource(c(buggy_events,robust_events)))
 
-print(evs_corpus)
+#print(evs_corpus)
 #quit()
 
-BigramTokenizer <- function(x) {RWeka::NGramTokenizer(x, RWeka::Weka_control(min = 1, max = 3, delimiters="  "))}
+BigramTokenizer <- function(x) {RWeka::NGramTokenizer(x, RWeka::Weka_control(min = 10, max = 10, delimiters="  "))}
 #cl = list(tokenize = BigramTokenizer, bounds = list(global = c(1,Inf)), weighting = wf) 
 cl = list(bounds = list(global = c(1,Inf)), weighting = wf)#, tokenize = BigramTokenizer) 
 
@@ -128,13 +129,13 @@ sample_program_events = read.csv(textConnection(readLines(mycon)), sep="\t", hea
 sample_program_events = na.omit(sample_program_events)
 
 
-sample_events = sample_program_events[,3]
 sample_programs = sample_program_events[,1]
+sample_events = sample_program_events[,3]
 unique_sample_programs = levels(factor(sample_programs))
 
 sample_program_sizes = sapply(FUN = length, strsplit( sample_events , split = " "))
 
-print(sample_programs %in% vulnerable_programs[,1])
+#print(sample_programs %in% vulnerable_programs[,1])
 
 #test_sample = sample(lenght(unique_sample_programs))
 
@@ -157,7 +158,7 @@ r_evs_dm_df[,setdiff(evs_vars,r_evs_vars)] = 0
 #r_evs_dm_df = r_evs_dm_df[,setdiff(r_evs_vars,evs_vars_to_remove)]
 real_test = r_evs_dm_df
 
-print(dim(real_test))
+#print(dim(real_test))
 
 #quit()
 
@@ -169,7 +170,7 @@ res_mut_evs  = c()
 
 for (n in msizes) {
 
-  nrep = 10
+  nrep = 1
   mut_only_err = 0.0
   mut_evs_err  = 0.0 
   
@@ -242,9 +243,9 @@ for (n in msizes) {
     #   cont = FALSE
     #}
 
-    print(c(train_size))
+    #print(c(train_size))
 
-    extravs = c("program","trace")
+    extravs = c("program","trace","size")
 
     train = rbind(buggy_train[1:train_size,setdiff(names(buggy_train),extravs)], robust_train[1:train_size,setdiff(names(robust_train),extravs)])
     #test  = rbind(buggy_test[1:test_size,setdiff(names(buggy_test),extravs)], robust_test[1:test_size,setdiff(names(robust_test),extravs)])
@@ -256,7 +257,7 @@ for (n in msizes) {
 
     #print(any(is.na(train)))
     varnot0 = names(train)[unlist(lapply(train,function(x) 0 != var(x)))]
-    print("size" %in% varnot0)
+    #print("size" %in% varnot0)
     #quit()
     #varnot0 = c(na.omit(varnot0), "class")
     #print
@@ -264,7 +265,7 @@ for (n in msizes) {
     xy_train = train[,varnot0]
     #xy_test  = test[,varnot0]
 
-    print(paste("xy_train dim:",dim(xy_train)))
+    #print(paste("xy_train dim:",dim(xy_train)))
 
 
     #real_test[setdiff(varnot0,names(real_test)),] = 0
@@ -281,20 +282,26 @@ for (n in msizes) {
     
     to_train = xy_train
     #to_test = x_test
+    for (ntree in seq(500,500,500)) {
+    #ntree = 500
+    print(paste("ntree:", ntree))
 
-    m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], importance=TRUE)
-    #m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, k = 1:10, tunecontrol=tcont)
+    m = randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], importance=TRUE, ntree = ntree)
+    #m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], k = 1:10)
     #m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, tunecontrol=tcont, importance=TRUE)
     #m = tune.svm(class~., data = to_train, validation.x = x_test, validation.y = y_test, gamma = 10^(-5:-1), cost = 10^(-1:3), tunecontrol=tcont)
     #print(m)
 
-    model = m$best.model
-    print(model)
+    #model = knn(to_train[,names(to_train) != "class"], to_train[,"class"], k = 1)
+    model = m#$best.model
+    #print(model)
 
-    imp =  round(importance(model),2)
-    inds = order(imp[,"B"], decreasing=T)
-    rownames(imp) = rownames(imp)[inds]
-    print(head(data.frame(imp[inds,"B"]),20)) 
+    #imp =  round(importance(model),2)
+    #inds = order(imp[,"B"], decreasing=T)
+    #rownames(imp) = rownames(imp)[inds]
+    #print(head(data.frame(imp[inds,"B"]),20)) 
+    #print(head(data.frame(imp[inds,"R"]),20)) 
+    
     
     #scores = t(abs(t(model$coefs) %*% model$SV))
     #inds = sort(scores, decreasing=TRUE, index.return = TRUE)$i
@@ -341,6 +348,8 @@ for (n in msizes) {
     ext_result = data.frame(score=scores, size=sizes)
     #ext_result = ext_result[ext_result$size > 8,]
     print(ext_result)
+
+    }
     #print(z == "B")
     #print(sample_programs %in% vulnerable_programs[,1])
 
@@ -357,4 +366,4 @@ for (n in msizes) {
 
 }
 
-print(data.frame(n=msizes, MutationOnly=res_mut_only, MutationEvents=res_mut_evs))
+#print(data.frame(n=msizes, MutationOnly=res_mut_only, MutationEvents=res_mut_evs))
