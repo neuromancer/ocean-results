@@ -1,0 +1,771 @@
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02099028 
+
+ [1] "X.fwrite.2.num32b8.fwrite.3.ptr32.fprintf.ret_val.num32b8."            
+ [2] "X.fwrite.3.ptr32.fprintf.ret_val.num32b8.fprintf.0.ptr32."             
+ [3] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."              
+ [4] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."                
+ [5] "X.strcpy.1.gptr32.strlen.ret_val.num32b8.strlen.0.gptr32."             
+ [6] "X.strcpy.0.hptr32.strcpy.1.gptr32.strlen.ret_val.num32b8."             
+ [7] "X.strcat.0.gptr32.strcat.1.gptr32.getopt.ret_val.num32b8."             
+ [8] "X.strcat.1.gptr32.getopt.ret_val.num32b8.getopt.0.num32b8."            
+ [9] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."             
+[10] "X.strrchr.0.sptr32.strrchr.1.num32b8.malloc.ret_val.hptr32."           
+[11] "X.malloc.ret_val.hptr32.malloc.0.num32b8.malloc.ret_val.top32."        
+[12] "X.textdomain.0.gptr32.malloc.ret_val.hptr32.malloc.0.num32b8."         
+[13] "X.textdomain.ret_val.hptr32.textdomain.0.gptr32.malloc.ret_val.hptr32."
+[14] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."         
+[15] "X.strcat.ret_val.gptr32.strcat.0.gptr32.strcat.1.gptr32."              
+[16] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.ptr32."                 
+[17] "X.strlen.0.ptr32.strlen.ret_val.num32b8.strlen.0.ptr32."               
+[18] "X.strlen.ret_val.num32b8.strlen.0.ptr32.strlen.ret_val.num32b8."       
+[19] "X.malloc.0.num32b8.malloc.ret_val.top32.malloc.0.num32b8."             
+[20] "X.malloc.0.num32b8.malloc.ret_val.hptr32.malloc.0.num32b8."            
+[21] "X.malloc.ret_val.hptr32.malloc.0.num32b8.malloc.ret_val.hptr32."       
+[22] "X.qsort.1.num32b8.qsort.2.num32b8.qsort.3.ptr32."                      
+[23] "X.sprintf.ret_val.top32.sprintf.0.gptr32.sprintf.1.gptr32."            
+[24] "X.qsort.0.ptr32.qsort.1.num32b8.qsort.2.num32b8."                      
+[25] "X.qsort.ret_val.top32.qsort.0.ptr32.qsort.1.num32b8."                  
+                                        score         size
+/usr/bin/hatari-winuae              1.0000000   431.000000
+/usr/bin/rec2csv                    1.0000000 18348.000000
+/usr/bin/garlic                     0.6666667  2895.000000
+/usr/games/freesci                  0.6666667   155.333333
+/usr/lib/sssd/sssd/ldap_child       0.6666667  3856.333333
+/usr/bin/dckey                      0.3333333 20459.666667
+/usr/bin/gosmore                    0.3333333 30795.000000
+/usr/bin/m68hc11-gcov               0.3333333    35.333333
+/usr/bin/tcucodec                   0.3333333  2623.333333
+/usr/bin/applycal                   0.0000000    31.666667
+/usr/bin/asfxload                   0.0000000    78.333333
+/usr/bin/cmph                       0.0000000    15.000000
+/usr/bin/db5.1_sql                  0.0000000    14.333333
+/usr/bin/e-P/usr/bin/afs_compile_et 0.0000000    17.000000
+/usr/bin/emms-print-metadata        0.0000000     1.666667
+/usr/bin/jack_netsource             0.0000000    24.666667
+/usr/bin/mincconvert                0.0000000    68.000000
+/usr/bin/morseLinux                 0.0000000     5.333333
+/usr/bin/mpegcat                    0.0000000     7.333333
+/usr/bin/mpgtx                      0.0000000     8.333333
+/usr/bin/mtbl_dump                  0.0000000     7.666667
+/usr/bin/osmpbf-outline             0.0000000    13.333333
+/usr/bin/pbesconstelm               0.0000000    44.666667
+/usr/bin/pda                        0.0000000     1.333333
+/usr/bin/pforth                     0.0000000   364.000000
+/usr/bin/probcons-RNA               0.0000000   235.000000
+/usr/bin/sfmtcvt                    0.0000000     7.333333
+/usr/bin/tslmendian                 0.0000000    18.000000
+/usr/bin/txt2ti3                    0.0000000    36.000000
+/usr/bin/wmf                        0.0000000    30.333333
+/usr/bin/wmwave                     0.0000000    23.000000
+/usr/bin/xppaut                     0.0000000    93.666667
+/usr/lib/gwaei/kpengine             0.0000000     7.666667
+/usr/lib/lbdb/vcquery               0.0000000    20.333333
+/usr/lib/open-axiom/lib/view2D      0.0000000     9.333333
+/usr/lib/uhd/tests/convert_test     0.0000000 14914.000000
+/usr/sbin/sredird                   0.0000000    46.000000
+64,3,28,0,4,0,3,0,2
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02141765 
+
+ [1] "X.fwrite.2.num32b8.fwrite.3.ptr32.fprintf.ret_val.num32b8."               
+ [2] "X.fprintf.0.ptr32.fprintf.1.gptr32.fwrite.ret_val.num32b8."               
+ [3] "X.fprintf.1.gptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."               
+ [4] "X.fwrite.ret_val.num32b8.fwrite.0.gptr32.fwrite.1.num32b8."               
+ [5] "X.fwrite.0.gptr32.fwrite.1.num32b8.fwrite.2.num32b8."                     
+ [6] "X.fwrite.3.ptr32.fprintf.ret_val.num32b8.fprintf.0.ptr32."                
+ [7] "X.fwrite.1.num32b8.fwrite.2.num32b8.fwrite.3.ptr32."                      
+ [8] "X.strcat.0.gptr32.strcat.1.gptr32.getopt.ret_val.num32b8."                
+ [9] "X.strcat.1.gptr32.getopt.ret_val.num32b8.getopt.0.num32b8."               
+[10] "X.fwrite.2.num32b8.fwrite.3.ptr32.fwrite.ret_val.num32b8."                
+[11] "X.fwrite.3.ptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."                 
+[12] "X.getopt_long.ret_val.num32b0.getopt_long.0.num32b8.getopt_long.1.sptr32."
+[13] "X.strrchr.ret_val.top32.strrchr.0.sptr32.strrchr.1.num32b8."              
+[14] "X.openlog.0.gptr32.openlog.1.num32b8.openlog.2.num32b8."                  
+[15] "X.openlog.ret_val.top32.openlog.0.gptr32.openlog.1.num32b8."              
+[16] "X.calloc.ret_val.top32.calloc.0.num32b8.calloc.1.num32b8."                
+[17] "X.strlen.0.sptr32.printf.ret_val.num32b8.printf.0.gptr32."                
+[18] "X.strlen.ret_val.num32b16.strlen.0.sptr32.printf.ret_val.num32b8."        
+[19] "X.strcat.1.sptr32.strlen.ret_val.num32b8.strlen.0.hptr32."                
+[20] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."                
+[21] "X.getenv.ret_val.nptr32.getenv.0.gptr32.strcmp.ret_val.num32b8."          
+[22] "X.strcat.0.hptr32.strcat.1.sptr32.strlen.ret_val.num32b8."                
+[23] "X.fwrite.2.num32b8.fwrite.3.ptr32.fputc.ret_val.num32b8."                 
+[24] "X.fwrite.3.ptr32.fputc.ret_val.num32b8.fputc.0.num32b8."                  
+[25] "X.fputc.1.ptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."                  
+                                              score         size
+/usr/bin/retrv                            1.0000000   243.666667
+/usr/bin/dia-normal                       0.3333333 20393.000000
+/usr/bin/sfmtcvt                          0.3333333     7.333333
+/usr/bin/sweepgen                         0.3333333     5.666667
+/usr/games/jumpnbump                      0.3333333  1243.000000
+/usr/lib/gmt/bin/ps2raster                0.3333333    20.333333
+/usr/bin/aliki                            0.0000000    26.000000
+/usr/bin/amap                             0.0000000     2.333333
+/usr/bin/autogrid4                        0.0000000   514.333333
+/usr/bin/dckey                            0.0000000 20459.666667
+/usr/bin/emms-print-metadata              0.0000000     1.666667
+/usr/bin/fastx_quality_stats              0.0000000    21.666667
+/usr/bin/garmin_gchart                    0.0000000    22.333333
+/usr/bin/grolbp                           0.0000000  5887.666667
+/usr/bin/hime-setup                       0.0000000     8.000000
+/usr/bin/hxnum                            0.0000000     8.000000
+/usr/bin/isofilter0                       0.0000000   477.333333
+/usr/bin/ldns-keyfetcher                  0.0000000     1.000000
+/usr/bin/perm3                            0.0000000   932.000000
+/usr/bin/pforth                           0.0000000   364.000000
+/usr/bin/probcons-RNA                     0.0000000   235.000000
+/usr/bin/rgb2pat                          0.0000000     5.333333
+/usr/bin/shape                            0.0000000  2842.666667
+/usr/bin/snooper                          0.0000000    60.333333
+/usr/bin/tcucodec                         0.0000000  2623.333333
+/usr/bin/tinyscheme                       0.0000000 23172.666667
+/usr/bin/tslmendian                       0.0000000    18.000000
+/usr/bin/wmf                              0.0000000    30.333333
+/usr/bin/xjinfo                           0.0000000     6.666667
+/usr/games/bi2cf                          0.0000000    23.333333
+/usr/lib/ants/ANTSIntegrateVectorField    0.0000000   497.333333
+/usr/lib/gridengine/getservbyname         0.0000000    23.000000
+/usr/lib/hobbit/server/bin/hobbitd_client 0.0000000 47491.333333
+/usr/lib/libatlas-test/xcasum             0.0000000     2.666667
+/usr/lib/open-axiom/lib/view2D            0.0000000     9.333333
+/usr/lib/qingy/qingy-DirectFB             0.0000000    21.333333
+/usr/lib/uhd/tests/convert_test           0.0000000 14914.000000
+64,4,31,0,5,0,0,1,1
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.023204 
+
+ [1] "X.fopen.ret_val.hptr32.fopen.0.sptr32.fopen.1.gptr32."            
+ [2] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.gptr32."           
+ [3] "X.fopen.ret_val.nptr32.fopen.0.sptr32.fopen.1.gptr32."            
+ [4] "X.qsort.0.gptr32.qsort.1.num32b8.qsort.2.num32b8."                
+ [5] "X.qsort.ret_val.top32.qsort.0.gptr32.qsort.1.num32b8."            
+ [6] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."         
+ [7] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."           
+ [8] "X.strrchr.0.sptr32.strrchr.1.num32b8.strrchr.ret_val.nptr32."     
+ [9] "X.isatty.0.num32b0.fwrite.ret_val.num32b8.fwrite.0.gptr32."       
+[10] "X.isatty.ret_val.num32b0.isatty.0.num32b0.fwrite.ret_val.num32b8."
+[11] "X.strrchr.1.num32b8.strrchr.ret_val.nptr32.strrchr.0.sptr32."     
+[12] "X.fprintf.ret_val.num32b16.fprintf.0.ptr32.fprintf.1.gptr32."     
+[13] "X.fwrite.ret_val.top32.fwrite.0.gptr32.fwrite.1.num32b8."         
+[14] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."    
+[15] "X.fwrite.0.gptr32.fwrite.1.num32b8.fwrite.2.num32b8."             
+[16] "X.qsort.1.num32b8.qsort.2.num32b8.qsort.3.ptr32."                 
+[17] "X.fwrite.ret_val.num32b8.fwrite.0.gptr32.fwrite.1.num32b8."       
+[18] "X.fwrite.1.num32b8.fwrite.2.num32b8.fwrite.3.ptr32."              
+[19] "X.strlen.0.ptr32.strlen.ret_val.top32.strlen.0.ptr32."            
+[20] "X.strlen.ret_val.num32b8.strlen.0.ptr32.strlen.ret_val.top32."    
+[21] "X.strrchr.ret_val.top32.strrchr.0.sptr32.strrchr.1.num32b8."      
+[22] "X.fwrite.2.num32b8.fwrite.3.ptr32.fwrite.ret_val.num32b8."        
+[23] "X.fwrite.3.ptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."         
+[24] "X.strrchr.1.num32b8.malloc.ret_val.hptr32.malloc.0.num32b8."      
+[25] "X.time.0.nptr32.malloc.ret_val.hptr32.malloc.0.num32b8."          
+                                              score         size
+/usr/bin/extract_fastq                    1.0000000    48.000000
+/usr/bin/mksource                         1.0000000   982.000000
+/usr/lib/hobbit/server/bin/hobbitd_client 1.0000000 47491.333333
+/usr/bin/dia-normal                       0.6666667 20393.000000
+/usr/bin/lookbib                          0.6666667   264.000000
+/usr/bin/smujajgau                        0.6666667    15.666667
+/usr/games/jumpnbump                      0.6666667  1243.000000
+/usr/sbin/th-cmd                          0.6666667    56.666667
+/usr/bin/applycal                         0.3333333    31.666667
+/usr/bin/asfxload                         0.3333333    78.333333
+/usr/bin/dckey                            0.3333333 20459.666667
+/usr/bin/juman                            0.3333333    46.000000
+/usr/bin/m68hc11-gcov                     0.3333333    35.333333
+/usr/bin/pforth                           0.3333333   364.000000
+/bin/upsc                                 0.0000000    33.333333
+/usr/bin/binhex                           0.0000000    61.666667
+/usr/bin/cdrwtool                         0.0000000  6075.000000
+/usr/bin/chrpath                          0.0000000    20.000000
+/usr/bin/ctnnetwork                       0.0000000    22.000000
+/usr/bin/cxref                            0.0000000   115.000000
+/usr/bin/e-P/usr/bin/afs_compile_et       0.0000000    17.000000
+/usr/bin/garmin_gmap                      0.0000000    31.666667
+/usr/bin/gtk-theme-switch2                0.0000000     6.333333
+/usr/bin/hime-setup                       0.0000000     8.000000
+/usr/bin/isofilter0                       0.0000000   477.333333
+/usr/bin/jack_netsource                   0.0000000    24.666667
+/usr/bin/macro1                           0.0000000  1622.000000
+/usr/bin/minisat                          0.0000000    27.000000
+/usr/bin/mpgtx                            0.0000000     8.333333
+/usr/bin/oligotm                          0.0000000     2.000000
+/usr/bin/osmpbf-outline                   0.0000000    13.333333
+/usr/bin/snooper                          0.0000000    60.333333
+/usr/bin/trisetcmp                        0.0000000    24.333333
+/usr/bin/unadf                            0.0000000    10.333333
+/usr/bin/xppaut                           0.0000000    93.666667
+/usr/games/bi2cf                          0.0000000    23.333333
+/usr/lib/ants/Atropos                     0.0000000    65.666667
+/usr/lib/gwaei/kpengine                   0.0000000     7.666667
+/usr/lib/libatlas-test/xcasum             0.0000000     2.666667
+/usr/lib/qingy/qingy-DirectFB             0.0000000    21.333333
+64,5,26,1,6,1,5,2,3
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02279473 
+
+ [1] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."         
+ [2] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."           
+ [3] "X.strtok.ret_val.nptr32.strtok.0.sptr32.strtok.1.gptr32."         
+ [4] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."        
+ [5] "X.strcat.0.gptr32.strcat.1.gptr32.getopt.ret_val.num32b8."        
+ [6] "X.strcat.1.gptr32.getopt.ret_val.num32b8.getopt.0.num32b8."       
+ [7] "X.openlog.0.gptr32.openlog.1.num32b8.openlog.2.num32b8."          
+ [8] "X.openlog.ret_val.top32.openlog.0.gptr32.openlog.1.num32b8."      
+ [9] "X.strcat.ret_val.gptr32.strcat.0.gptr32.strcat.1.gptr32."         
+[10] "X.fopen.0.sptr32.fopen.1.gptr32.printf.ret_val.num32b8."          
+[11] "X.fopen.1.gptr32.printf.ret_val.num32b8.printf.0.gptr32."         
+[12] "X.strrchr.0.sptr32.strrchr.1.num32b8.malloc.ret_val.hptr32."      
+[13] "X.calloc.ret_val.top32.calloc.0.num32b8.calloc.1.num32b8."        
+[14] "X.strlen.0.sptr32.printf.ret_val.num32b8.printf.0.gptr32."        
+[15] "X.strlen.ret_val.num32b16.strlen.0.sptr32.printf.ret_val.num32b8."
+[16] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.ptr32."            
+[17] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."    
+[18] "X.qsort.1.num32b8.qsort.2.num32b8.qsort.3.ptr32."                 
+[19] "X.strlen.0.ptr32.strcmp.ret_val.num32b8.strcmp.0.gptr32."         
+[20] "X.fputc.0.num32b8.fputc.1.ptr32.fputc.ret_val.num32b8."           
+[21] "X.fputc.1.ptr32.fputc.ret_val.num32b8.fputc.0.num32b8."           
+[22] "X.getenv.ret_val.nptr32.getenv.0.gptr32.strcmp.ret_val.num32b8."  
+[23] "X.qsort.0.ptr32.qsort.1.num32b8.qsort.2.num32b8."                 
+[24] "X.qsort.ret_val.top32.qsort.0.ptr32.qsort.1.num32b8."             
+[25] "X.strrchr.ret_val.top32.strrchr.0.sptr32.strrchr.1.num32b8."      
+                                          score         size
+/usr/bin/extract_fastq                1.0000000    48.000000
+/usr/bin/vadm                         1.0000000   551.000000
+/usr/bin/asfxload                     0.6666667    78.333333
+/usr/bin/awardeco                     0.3333333     9.000000
+/usr/bin/skyeye                       0.3333333    17.666667
+/usr/games/jumpnbump                  0.3333333  1243.000000
+/bin/upsc                             0.0000000    33.333333
+/usr/bin/asmail                       0.0000000     6.000000
+/usr/bin/fastx_quality_stats          0.0000000    21.666667
+/usr/bin/faust                        0.0000000   952.333333
+/usr/bin/fax2tiff                     0.0000000     1.500000
+/usr/bin/fenix-fxc                    0.0000000    71.333333
+/usr/bin/ftpcopy                      0.0000000    12.333333
+/usr/bin/gmrun                        0.0000000   146.000000
+/usr/bin/gosmore                      0.0000000 30795.000000
+/usr/bin/grib_convert                 0.0000000   142.333333
+/usr/bin/hatari-winuae                0.0000000   431.000000
+/usr/bin/hime-setup                   0.0000000     8.000000
+/usr/bin/isofilter0                   0.0000000   477.333333
+/usr/bin/isofilter2                   0.0000000   641.333333
+/usr/bin/jack_midi_latency_test       0.0000000     8.666667
+/usr/bin/jbofihe                      0.0000000     9.333333
+/usr/bin/ldns-keyfetcher              0.0000000     1.000000
+/usr/bin/ncecat                       0.0000000    31.333333
+/usr/bin/rdx                          0.0000000   896.333333
+/usr/bin/redis-check-dump             0.0000000    72.333333
+/usr/bin/rgb2pat                      0.0000000     5.333333
+/usr/bin/rifiuti                      0.0000000     9.333333
+/usr/bin/swab                         0.0000000   595.000000
+/usr/bin/trisetcmp                    0.0000000    24.333333
+/usr/bin/unadf                        0.0000000    10.333333
+/usr/bin/wmf                          0.0000000    30.333333
+/usr/bin/xa                           0.0000000    22.333333
+/usr/bin/ytasm                        0.0000000   260.666667
+/usr/lib/ants/Atropos                 0.0000000    65.666667
+/usr/lib/juman/makepat                0.0000000    15.666667
+/usr/lib/libraw/unprocessed_raw       0.0000000    12.666667
+/usr/lib/wmcoincoin/wmcoincoin_player 0.0000000     7.333333
+/usr/sbin/plpfuse                     0.0000000    14.333333
+64,4,33,0,3,1,1,2,2
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02301043 
+
+ [1] "X.fopen.ret_val.hptr32.fopen.0.sptr32.fopen.1.gptr32."            
+ [2] "X.fopen.ret_val.nptr32.fopen.0.sptr32.fopen.1.gptr32."            
+ [3] "X.strlen.0.sptr32.strlen.ret_val.num32b8.strlen.0.sptr32."        
+ [4] "X.strlen.0.sptr32.malloc.ret_val.hptr32.malloc.0.num32b16."       
+ [5] "X.strtok.ret_val.nptr32.strtok.0.sptr32.strtok.1.gptr32."         
+ [6] "X.strlen.ret_val.num32b8.strlen.0.sptr32.strlen.ret_val.num32b8." 
+ [7] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."         
+ [8] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."           
+ [9] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.ptr32."            
+[10] "X.qsort.0.ptr32.qsort.1.num32b8.qsort.2.num32b8."                 
+[11] "X.qsort.ret_val.top32.qsort.0.ptr32.qsort.1.num32b8."             
+[12] "X.openlog.0.gptr32.openlog.1.num32b8.openlog.2.num32b8."          
+[13] "X.openlog.ret_val.top32.openlog.0.gptr32.openlog.1.num32b8."      
+[14] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."        
+[15] "X.strlen.0.sptr32.printf.ret_val.num32b8.printf.0.gptr32."        
+[16] "X.strlen.ret_val.num32b16.strlen.0.sptr32.printf.ret_val.num32b8."
+[17] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."    
+[18] "X.strlen.0.ptr32.strlen.ret_val.num32b8.strlen.0.ptr32."          
+[19] "X.strlen.ret_val.num32b8.strlen.0.ptr32.strlen.ret_val.num32b8."  
+[20] "X.qsort.1.num32b8.qsort.2.num32b8.qsort.3.ptr32."                 
+[21] "X.strlen.0.ptr32.strcmp.ret_val.num32b8.strcmp.0.gptr32."         
+[22] "X.getenv.ret_val.nptr32.getenv.0.gptr32.strcmp.ret_val.num32b8."  
+[23] "X.strcmp.ret_val.top32.strcmp.0.gptr32.strcmp.1.sptr32."          
+[24] "X.malloc.ret_val.hptr32.malloc.0.num32b8.malloc.ret_val.top32."   
+[25] "X.textdomain.0.gptr32.malloc.ret_val.hptr32.malloc.0.num32b8."    
+                                        score         size
+/usr/bin/retrv                      0.6666667   243.666667
+/usr/bin/cmph                       0.3333333    15.000000
+/usr/bin/gosmore                    0.3333333 30795.000000
+/usr/bin/mincconvert                0.3333333    68.000000
+/usr/bin/ncecat                     0.3333333    31.333333
+/usr/lib/gwaei/kpengine             0.3333333     7.666667
+/usr/bin/aliki                      0.0000000    26.000000
+/usr/bin/binhex                     0.0000000    61.666667
+/usr/bin/catdump                    0.0000000     6.000000
+/usr/bin/ccal                       0.0000000   721.666667
+/usr/bin/cjet                       0.0000000     3.000000
+/usr/bin/ctnnetwork                 0.0000000    22.000000
+/usr/bin/dotur                      0.0000000     5.000000
+/usr/bin/e-P/usr/bin/afs_compile_et 0.0000000    17.000000
+/usr/bin/efix                       0.0000000   815.666667
+/usr/bin/ftpcopy                    0.0000000    12.333333
+/usr/bin/garlic                     0.0000000  2895.000000
+/usr/bin/garmin_gmap                0.0000000    31.666667
+/usr/bin/gman                       0.0000000   203.000000
+/usr/bin/grolbp                     0.0000000  5887.666667
+/usr/bin/hatari-winuae              0.0000000   431.000000
+/usr/bin/intel_reg_dumper           0.0000000    50.666667
+/usr/bin/jbofihe                    0.0000000     9.333333
+/usr/bin/ldns-keyfetcher            0.0000000     1.000000
+/usr/bin/m68hc11-gcov               0.0000000    35.333333
+/usr/bin/mdiff                      0.0000000   164.333333
+/usr/bin/minisat                    0.0000000    27.000000
+/usr/bin/pcapreport                 0.0000000    10.000000
+/usr/bin/pda                        0.0000000     1.333333
+/usr/bin/rifiuti                    0.0000000     9.333333
+/usr/bin/ts_packet_insert           0.0000000     4.666667
+/usr/bin/tslmendian                 0.0000000    18.000000
+/usr/bin/wmwave                     0.0000000    23.000000
+/usr/bin/xview_xgettext             0.0000000    24.666667
+/usr/games/alex4                    0.0000000     2.000000
+/usr/lib/ants/Atropos               0.0000000    65.666667
+/usr/lib/nagios/plugins/check_game  0.0000000     1.666667
+/usr/lib/squid/ip_user_check        0.0000000     1.500000
+/usr/sbin/th-cmd                    0.0000000    56.666667
+64,5,33,0,5,1,1,0,0
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02219593 
+
+ [1] "X.strlen.0.sptr32.malloc.ret_val.hptr32.malloc.0.num32b16."               
+ [2] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."                 
+ [3] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."                   
+ [4] "X.memcpy.0.hptr32.memcpy.1.hptr32.memcpy.2.num32b16."                     
+ [5] "X.strlen.0.ptr32.memcpy.ret_val.hptr32.memcpy.0.hptr32."                  
+ [6] "X.strlen.ret_val.num32b8.strlen.0.ptr32.memcpy.ret_val.hptr32."           
+ [7] "X.getopt_long.ret_val.num32b0.getopt_long.0.num32b8.getopt_long.1.sptr32."
+ [8] "X.strlen.ret_val.num32b8.strlen.0.sptr32.strlen.ret_val.num32b16."        
+ [9] "X.openlog.0.gptr32.openlog.1.num32b8.openlog.2.num32b8."                  
+[10] "X.openlog.ret_val.top32.openlog.0.gptr32.openlog.1.num32b8."              
+[11] "X.strlen.0.ptr32.strlen.ret_val.top32.strlen.0.ptr32."                    
+[12] "X.strlen.ret_val.num32b8.strlen.0.ptr32.strlen.ret_val.top32."            
+[13] "X.strlen.ret_val.num32b16.strlen.0.sptr32.printf.ret_val.num32b8."        
+[14] "X.strlen.0.sptr32.printf.ret_val.num32b8.printf.0.gptr32."                
+[15] "X.strlen.0.sptr32.strlen.ret_val.num32b8.strlen.0.sptr32."                
+[16] "X.strlen.ret_val.num32b8.strlen.0.sptr32.strlen.ret_val.num32b8."         
+[17] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."                
+[18] "X.getenv.ret_val.nptr32.getenv.0.gptr32.strcmp.ret_val.num32b8."          
+[19] "X.time.0.nptr32.malloc.ret_val.hptr32.malloc.0.num32b8."                  
+[20] "X.strlen.0.sptr32.strlen.ret_val.num32b16.strlen.0.sptr32."               
+[21] "X.strtok.ret_val.top32.strtok.0.sptr32.strtok.1.gptr32."                  
+[22] "X.strrchr.ret_val.top32.strrchr.0.sptr32.strrchr.1.num32b8."              
+[23] "X.time.ret_val.num32b32.time.0.nptr32.malloc.ret_val.hptr32."             
+[24] "X.getopt.1.sptr32.getopt.2.gptr32.getopt.ret_val.num32b32."               
+[25] "X.getopt.2.gptr32.getopt.ret_val.num32b32.getopt.0.num32b8."              
+                                              score         size
+/usr/bin/extract_fastq                    1.0000000    48.000000
+/usr/bin/garlic                           1.0000000  2895.000000
+/usr/bin/grolbp                           1.0000000  5887.666667
+/usr/bin/rec2csv                          1.0000000 18348.000000
+/usr/lib/hobbit/server/bin/hobbitd_client 1.0000000 47491.333333
+/usr/bin/h5dump                           0.6666667  5747.333333
+/usr/bin/mksource                         0.6666667   982.000000
+/usr/lib/libraw/dcraw_emu                 0.6666667  1455.333333
+/usr/bin/binhex                           0.3333333    61.666667
+/usr/bin/garmin_gchart                    0.3333333    22.333333
+/usr/bin/sfmtcvt                          0.3333333     7.333333
+/usr/bin/amap                             0.0000000     2.333333
+/usr/bin/chrpath                          0.0000000    20.000000
+/usr/bin/dotur                            0.0000000     5.000000
+/usr/bin/e-P/usr/bin/afs_compile_et       0.0000000    17.000000
+/usr/bin/fastx_quality_stats              0.0000000    21.666667
+/usr/bin/ftpcopy                          0.0000000    12.333333
+/usr/bin/garmin_gmap                      0.0000000    31.666667
+/usr/bin/gtk-theme-switch2                0.0000000     6.333333
+/usr/bin/hatari-winuae                    0.0000000   431.000000
+/usr/bin/hxnum                            0.0000000     8.000000
+/usr/bin/hxunpipe                         0.0000000  1718.333333
+/usr/bin/image_to_j2k                     0.0000000    33.000000
+/usr/bin/isofilter                        0.0000000  5080.000000
+/usr/bin/ldns-keyfetcher                  0.0000000     1.000000
+/usr/bin/otf2bdf                          0.0000000   282.333333
+/usr/bin/pbesconstelm                     0.0000000    44.666667
+/usr/bin/redis-check-dump                 0.0000000    72.333333
+/usr/bin/rifiuti                          0.0000000     9.333333
+/usr/bin/svm-predict                      0.0000000     3.000000
+/usr/bin/ts_packet_insert                 0.0000000     4.666667
+/usr/bin/tslmendian                       0.0000000    18.000000
+/usr/bin/tslmpack                         0.0000000     9.333333
+/usr/bin/txt2ti3                          0.0000000    36.000000
+/usr/bin/xview_xgettext                   0.0000000    24.666667
+/usr/lib/ants/Atropos                     0.0000000    65.666667
+/usr/lib/gridengine/getservbyname         0.0000000    23.000000
+/usr/lib/ksplice-objmanip                 0.0000000    85.666667
+/usr/lib/magicrescue/tools/textextract    0.0000000     7.666667
+/usr/lib/nagios/plugins/check_game        0.0000000     1.666667
+/usr/lib/uhd/tests/convert_test           0.0000000 14914.000000
+64,1,30,1,3,2,3,2,5
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.01959911 
+
+ [1] "X.strlen.0.sptr32.malloc.ret_val.hptr32.malloc.0.num32b16."   
+ [2] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.ptr32."        
+ [3] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."     
+ [4] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."       
+ [5] "X.qsort.0.ptr32.qsort.1.num32b8.qsort.2.num32b8."             
+ [6] "X.qsort.ret_val.top32.qsort.0.ptr32.qsort.1.num32b8."         
+ [7] "X.fwrite.0.gptr32.fwrite.1.num32b8.fwrite.2.num32b8."         
+ [8] "X.fwrite.ret_val.top32.fwrite.0.gptr32.fwrite.1.num32b8."     
+ [9] "X.fwrite.ret_val.num32b8.fwrite.0.gptr32.fwrite.1.num32b8."   
+[10] "X.fputc.1.ptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."      
+[11] "X.fwrite.1.num32b8.fwrite.2.num32b8.fwrite.3.ptr32."          
+[12] "X.fputc.0.num32b8.fputc.1.ptr32.fwrite.ret_val.num32b8."      
+[13] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."
+[14] "X.fwrite.2.num32b8.fwrite.3.ptr32.fputc.ret_val.num32b8."     
+[15] "X.fwrite.3.ptr32.fputc.ret_val.num32b8.fputc.0.num32b8."      
+[16] "X.strrchr.0.sptr32.strrchr.1.num32b8.strrchr.ret_val.nptr32." 
+[17] "X.qsort.1.num32b8.qsort.2.num32b8.qsort.3.ptr32."             
+[18] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."    
+[19] "X.strrchr.1.num32b8.strrchr.ret_val.nptr32.strrchr.0.sptr32." 
+[20] "X.fwrite.2.num32b8.fwrite.3.ptr32.fprintf.ret_val.num32b8."   
+[21] "X.fwrite.3.ptr32.fprintf.ret_val.num32b8.fprintf.0.ptr32."    
+[22] "X.fprintf.0.ptr32.fprintf.1.gptr32.fprintf.ret_val.num32b8."  
+[23] "X.fprintf.1.gptr32.fprintf.ret_val.num32b8.fprintf.0.ptr32."  
+[24] "X.openlog.0.gptr32.openlog.1.num32b8.openlog.2.num32b8."      
+[25] "X.openlog.ret_val.top32.openlog.0.gptr32.openlog.1.num32b8."  
+                                    score         size
+/usr/bin/extract_fastq          1.0000000    48.000000
+/usr/bin/lcrack                 1.0000000    75.000000
+/usr/bin/grib_convert           0.6666667   142.333333
+/usr/bin/setupnash2             0.6666667    10.000000
+/usr/bin/sfte                   0.6666667    10.666667
+/usr/bin/tinyscheme             0.6666667 23172.666667
+/usr/games/bi2cf                0.6666667    23.333333
+/usr/bin/asfxload               0.3333333    78.333333
+/usr/bin/osmpbf-outline         0.3333333    13.333333
+/usr/bin/sfmtcvt                0.3333333     7.333333
+/bin/upsc                       0.0000000    33.333333
+/usr/bin/autogrid4              0.0000000   514.333333
+/usr/bin/db5.1_sql              0.0000000    14.333333
+/usr/bin/dotur                  0.0000000     5.000000
+/usr/bin/emms-print-metadata    0.0000000     1.666667
+/usr/bin/fastx_quality_stats    0.0000000    21.666667
+/usr/bin/fst-compare            0.0000000    56.000000
+/usr/bin/ftpcopy                0.0000000    12.333333
+/usr/bin/fyre                   0.0000000  5344.000000
+/usr/bin/garmin_gmap            0.0000000    31.666667
+/usr/bin/gman                   0.0000000   203.000000
+/usr/bin/mdiff                  0.0000000   164.333333
+/usr/bin/mincconvert            0.0000000    68.000000
+/usr/bin/redis-check-dump       0.0000000    72.333333
+/usr/bin/rifiuti                0.0000000     9.333333
+/usr/bin/scm                    0.0000000  4297.000000
+/usr/bin/tessa                  0.0000000    49.333333
+/usr/bin/trisetcmp              0.0000000    24.333333
+/usr/bin/wmf                    0.0000000    30.333333
+/usr/bin/wmwave                 0.0000000    23.000000
+/usr/bin/ytasm                  0.0000000   260.666667
+/usr/lib/juman/makeint          0.0000000     7.000000
+/usr/lib/libatlas-test/xcasum   0.0000000     2.666667
+/usr/lib/uhd/tests/convert_test 0.0000000 14914.000000
+/usr/sbin/plpfuse               0.0000000    14.333333
+64,2,25,1,3,2,5,1,2
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02438349 
+
+ [1] "X.fwrite.2.num32b8.fwrite.3.ptr32.fprintf.ret_val.num32b8."   
+ [2] "X.fprintf.0.ptr32.fprintf.1.gptr32.fwrite.ret_val.num32b8."   
+ [3] "X.fprintf.1.gptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."   
+ [4] "X.fwrite.3.ptr32.fprintf.ret_val.num32b8.fprintf.0.ptr32."    
+ [5] "X.strrchr.0.sptr32.strrchr.1.num32b8.strrchr.ret_val.nptr32." 
+ [6] "X.strrchr.1.num32b8.strrchr.ret_val.nptr32.strrchr.0.sptr32." 
+ [7] "X.strlen.0.sptr32.malloc.ret_val.hptr32.malloc.0.num32b16."   
+ [8] "X.fopen.ret_val.hptr32.fopen.0.sptr32.fopen.1.gptr32."        
+ [9] "X.strtok.ret_val.nptr32.strtok.0.sptr32.strtok.1.gptr32."     
+[10] "X.fopen.ret_val.nptr32.fopen.0.sptr32.fopen.1.gptr32."        
+[11] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."     
+[12] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."       
+[13] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.gptr32."       
+[14] "X.qsort.0.gptr32.qsort.1.num32b8.qsort.2.num32b8."            
+[15] "X.qsort.ret_val.top32.qsort.0.gptr32.qsort.1.num32b8."        
+[16] "X.fprintf.0.ptr32.fprintf.1.gptr32.fprintf.ret_val.num32b8."  
+[17] "X.fprintf.1.gptr32.fprintf.ret_val.num32b8.fprintf.0.ptr32."  
+[18] "X.fprintf.ret_val.top32.fprintf.0.ptr32.fprintf.1.gptr32."    
+[19] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."
+[20] "X.qsort.1.num32b8.qsort.2.num32b8.qsort.3.ptr32."             
+[21] "X.malloc.0.num32b16.malloc.ret_val.hptr32.malloc.0.num32b8."  
+[22] "X.openlog.0.gptr32.openlog.1.num32b8.openlog.2.num32b8."      
+[23] "X.openlog.ret_val.top32.openlog.0.gptr32.openlog.1.num32b8."  
+[24] "X.strrchr.ret_val.top32.strrchr.0.sptr32.strrchr.1.num32b8."  
+[25] "X.strlen.0.sptr32.printf.ret_val.num32b8.printf.0.gptr32."    
+                                              score         size
+/usr/bin/lcrack                           1.0000000    75.000000
+/usr/bin/jack_netsource                   0.6666667    24.666667
+/usr/bin/mksource                         0.6666667   982.000000
+/usr/bin/smujajgau                        0.6666667    15.666667
+/usr/bin/wmwave                           0.6666667    23.000000
+/usr/bin/cxref                            0.3333333   115.000000
+/usr/bin/sfmtcvt                          0.3333333     7.333333
+/usr/bin/ytasm                            0.3333333   260.666667
+/usr/bin/amap                             0.0000000     2.333333
+/usr/bin/binhex                           0.0000000    61.666667
+/usr/bin/cdrwtool                         0.0000000  6075.000000
+/usr/bin/cjet                             0.0000000     3.000000
+/usr/bin/dckey                            0.0000000 20459.666667
+/usr/bin/dotur                            0.0000000     5.000000
+/usr/bin/emms-print-metadata              0.0000000     1.666667
+/usr/bin/fcrackzipinfo                    0.0000000     1.666667
+/usr/bin/fenix-fxc                        0.0000000    71.333333
+/usr/bin/garmin_gmap                      0.0000000    31.666667
+/usr/bin/gman                             0.0000000   203.000000
+/usr/bin/hatari-winuae                    0.0000000   431.000000
+/usr/bin/hxunpipe                         0.0000000  1718.333333
+/usr/bin/isofilter0                       0.0000000   477.333333
+/usr/bin/lookbib                          0.0000000   264.000000
+/usr/bin/m68hc11-gcov                     0.0000000    35.333333
+/usr/bin/macro1                           0.0000000  1622.000000
+/usr/bin/mdiff                            0.0000000   164.333333
+/usr/bin/minisat                          0.0000000    27.000000
+/usr/bin/pcapreport                       0.0000000    10.000000
+/usr/bin/redis-check-dump                 0.0000000    72.333333
+/usr/bin/scm                              0.0000000  4297.000000
+/usr/bin/tcucodec                         0.0000000  2623.333333
+/usr/bin/tslmpack                         0.0000000     9.333333
+/usr/bin/usepackage                       0.0000000    32.000000
+/usr/games/alex4                          0.0000000     2.000000
+/usr/lib/hobbit/server/bin/hobbitd_client 0.0000000 47491.333333
+/usr/lib/juman/makeint                    0.0000000     7.000000
+/usr/lib/ksplice-objmanip                 0.0000000    85.666667
+/usr/lib/mapnik/2.0/input/osm.input       0.0000000     2.000000
+/usr/lib/uhd/tests/buffer_test            0.0000000  7010.000000
+/usr/sbin/th-cmd                          0.0000000    56.666667
+64,7,32,0,3,1,4,0,1
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02280882 
+
+ [1] "X.getopt.ret_val.num32b32.getopt.0.num32b8.getopt.1.sptr32."           
+ [2] "X.strtok.ret_val.nptr32.strtok.0.sptr32.strtok.1.gptr32."              
+ [3] "X.malloc.0.num32b8.malloc.ret_val.hptr32.malloc.0.num32b8."            
+ [4] "X.malloc.ret_val.hptr32.malloc.0.num32b8.malloc.ret_val.hptr32."       
+ [5] "X.fputc.0.num32b8.fputc.1.ptr32.fwrite.ret_val.num32b8."               
+ [6] "X.fputc.1.ptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."               
+ [7] "X.strcmp.0.gptr32.strcmp.1.sptr32.time.ret_val.num32b32."              
+ [8] "X.strcmp.1.sptr32.time.ret_val.num32b32.time.0.nptr32."                
+ [9] "X.strcat.0.gptr32.strcat.1.gptr32.getopt.ret_val.num32b8."             
+[10] "X.strcat.1.gptr32.getopt.ret_val.num32b8.getopt.0.num32b8."            
+[11] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.ptr32."                 
+[12] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."             
+[13] "X.textdomain.0.gptr32.malloc.ret_val.hptr32.malloc.0.num32b8."         
+[14] "X.textdomain.ret_val.hptr32.textdomain.0.gptr32.malloc.ret_val.hptr32."
+[15] "X.fprintf.1.gptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."            
+[16] "X.fprintf.0.ptr32.fprintf.1.gptr32.fwrite.ret_val.num32b8."            
+[17] "X.fwrite.2.num32b8.fwrite.3.ptr32.fputc.ret_val.num32b8."              
+[18] "X.fwrite.3.ptr32.fputc.ret_val.num32b8.fputc.0.num32b8."               
+[19] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."         
+[20] "X.strlen.0.hptr32.malloc.ret_val.hptr32.malloc.0.num32b8."             
+[21] "X.qsort.0.ptr32.qsort.1.num32b8.qsort.2.num32b8."                      
+[22] "X.qsort.ret_val.top32.qsort.0.ptr32.qsort.1.num32b8."                  
+[23] "X.fopen.0.sptr32.fopen.1.gptr32.printf.ret_val.num32b8."               
+[24] "X.fopen.1.gptr32.printf.ret_val.num32b8.printf.0.gptr32."              
+[25] "X.strlen.ret_val.num32b8.strlen.0.hptr32.malloc.ret_val.hptr32."       
+                                           score         size
+/bin/upsc                              1.0000000    33.333333
+/usr/bin/grib_convert                  0.6666667   142.333333
+/usr/bin/retrv                         0.6666667   243.666667
+/usr/bin/setupnash2                    0.6666667    10.000000
+/usr/bin/skyeye                        0.6666667    17.666667
+/usr/bin/tslmpack                      0.6666667     9.333333
+/usr/bin/hxunpipe                      0.3333333  1718.333333
+/usr/bin/image_to_j2k                  0.3333333    33.000000
+/usr/bin/rifiuti                       0.3333333     9.333333
+/usr/lib/magicrescue/tools/textextract 0.3333333     7.666667
+/usr/bin/ctnnetwork                    0.0000000    22.000000
+/usr/bin/dcm_diff                      0.0000000     5.000000
+/usr/bin/dia-normal                    0.0000000 20393.000000
+/usr/bin/emms-print-metadata           0.0000000     1.666667
+/usr/bin/fax2tiff                      0.0000000     1.500000
+/usr/bin/fenix-fxc                     0.0000000    71.333333
+/usr/bin/fyre                          0.0000000  5344.000000
+/usr/bin/h5dump                        0.0000000  5747.333333
+/usr/bin/hime-setup                    0.0000000     8.000000
+/usr/bin/hxnum                         0.0000000     8.000000
+/usr/bin/isofilter0                    0.0000000   477.333333
+/usr/bin/isofilter2                    0.0000000   641.333333
+/usr/bin/ldns-update                   0.0000000     1.666667
+/usr/bin/m68hc11-gcov                  0.0000000    35.333333
+/usr/bin/macro1                        0.0000000  1622.000000
+/usr/bin/mincconvert                   0.0000000    68.000000
+/usr/bin/mksource                      0.0000000   982.000000
+/usr/bin/ncecat                        0.0000000    31.333333
+/usr/bin/osmpbf-outline                0.0000000    13.333333
+/usr/bin/pforth                        0.0000000   364.000000
+/usr/bin/rdx                           0.0000000   896.333333
+/usr/bin/rgb2pat                       0.0000000     5.333333
+/usr/bin/shape                         0.0000000  2842.666667
+/usr/bin/swab                          0.0000000   595.000000
+/usr/bin/t_coffee                      0.0000000 24989.000000
+/usr/bin/txt2ti3                       0.0000000    36.000000
+/usr/bin/ymplayer                      0.0000000    10.666667
+/usr/lib/gridengine/getservbyname      0.0000000    23.000000
+/usr/lib/gwaei/kpengine                0.0000000     7.666667
+/usr/lib/juman/makeint                 0.0000000     7.000000
+/usr/lib/libraw/dcraw_emu              0.0000000  1455.333333
+/usr/lib/qingy/qingy-DirectFB          0.0000000    21.333333
+/usr/lib/uhd/tests/buffer_test         0.0000000  7010.000000
+/usr/lib/uhd/tests/convert_test        0.0000000 14914.000000
+/usr/sbin/diodload                     0.0000000    26.000000
+64,7,35,0,4,3,5,0,1
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02319595 
+
+ [1] "X.fopen.ret_val.hptr32.fopen.0.sptr32.fopen.1.ptr32."           
+ [2] "X.strlen.0.sptr32.malloc.ret_val.hptr32.malloc.0.num32b16."     
+ [3] "X.fprintf.ret_val.top32.fprintf.0.ptr32.fprintf.1.gptr32."      
+ [4] "X.strtok.ret_val.nptr32.strtok.0.sptr32.strtok.1.gptr32."       
+ [5] "X.fwrite.2.num32b8.fwrite.3.ptr32.fputc.ret_val.num32b8."       
+ [6] "X.fwrite.3.ptr32.fputc.ret_val.num32b8.fputc.0.num32b8."        
+ [7] "X.fputc.1.ptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."        
+ [8] "X.fputc.0.num32b8.fputc.1.ptr32.fwrite.ret_val.num32b8."        
+ [9] "X.strrchr.0.sptr32.strrchr.1.num32b8.malloc.ret_val.hptr32."    
+[10] "X.fwrite.ret_val.top32.fwrite.0.gptr32.fwrite.1.num32b8."       
+[11] "X.getenv.0.gptr32.strcmp.ret_val.num32b8.strcmp.0.sptr32."      
+[12] "X.fwrite.2.num32b8.fwrite.3.ptr32.fwrite.ret_val.num32b8."      
+[13] "X.fwrite.3.ptr32.fwrite.ret_val.num32b8.fwrite.0.gptr32."       
+[14] "X.openlog.0.gptr32.openlog.1.num32b8.openlog.2.num32b8."        
+[15] "X.openlog.ret_val.top32.openlog.0.gptr32.openlog.1.num32b8."    
+[16] "X.fwrite.0.gptr32.fwrite.1.num32b8.fwrite.2.num32b8."           
+[17] "X.fwrite.ret_val.num32b8.fwrite.0.gptr32.fwrite.1.num32b8."     
+[18] "X.fwrite.1.num32b8.fwrite.2.num32b8.fwrite.3.ptr32."            
+[19] "X.strrchr.1.num32b8.malloc.ret_val.hptr32.malloc.0.num32b8."    
+[20] "X.malloc.ret_val.hptr32.malloc.0.num32b8.qsort.ret_val.top32."  
+[21] "X.malloc.0.num32b8.qsort.ret_val.top32.qsort.0.ptr32."          
+[22] "X.malloc.ret_val.hptr32.malloc.0.num32b8.malloc.ret_val.top32." 
+[23] "X.getenv.ret_val.nptr32.getenv.0.gptr32.strcmp.ret_val.num32b8."
+[24] "X.strlen.0.sptr32.printf.ret_val.num32b8.printf.0.gptr32."      
+[25] "X.malloc.0.num32b8.malloc.ret_val.top32.malloc.0.num32b8."      
+                                           score         size
+/usr/bin/asfxload                      0.6666667    78.333333
+/usr/bin/jack_netsource                0.6666667    24.666667
+/usr/bin/lookbib                       0.6666667   264.000000
+/usr/bin/sfte                          0.6666667    10.666667
+/usr/games/bi2cf                       0.6666667    23.333333
+/usr/bin/lcrack                        0.3333333    75.000000
+/usr/bin/sfmtcvt                       0.3333333     7.333333
+/usr/lib/gwaei/kpengine                0.3333333     7.666667
+/usr/bin/binhex                        0.0000000    61.666667
+/usr/bin/extract_fastq                 0.0000000    48.000000
+/usr/bin/ftpcopy                       0.0000000    12.333333
+/usr/bin/gmrun                         0.0000000   146.000000
+/usr/bin/gosmore                       0.0000000 30795.000000
+/usr/bin/grolbp                        0.0000000  5887.666667
+/usr/bin/gtk-theme-switch2             0.0000000     6.333333
+/usr/bin/h5dump                        0.0000000  5747.333333
+/usr/bin/image_to_j2k                  0.0000000    33.000000
+/usr/bin/isofilter                     0.0000000  5080.000000
+/usr/bin/isofilter0                    0.0000000   477.333333
+/usr/bin/isofilter2                    0.0000000   641.333333
+/usr/bin/jbofihe                       0.0000000     9.333333
+/usr/bin/morseLinux                    0.0000000     5.333333
+/usr/bin/mpegcat                       0.0000000     7.333333
+/usr/bin/oligotm                       0.0000000     2.000000
+/usr/bin/perm3                         0.0000000   932.000000
+/usr/bin/redis-check-dump              0.0000000    72.333333
+/usr/bin/rgb2pat                       0.0000000     5.333333
+/usr/bin/rifiuti                       0.0000000     9.333333
+/usr/bin/t_coffee                      0.0000000 24989.000000
+/usr/bin/txt2ti3                       0.0000000    36.000000
+/usr/bin/xjinfo                        0.0000000     6.666667
+/usr/games/jumpnbump                   0.0000000  1243.000000
+/usr/lib/magicrescue/tools/textextract 0.0000000     7.666667
+/usr/lib/sssd/sssd/ldap_child          0.0000000  3856.333333
+/usr/lib/uhd/tests/convert_test        0.0000000 14914.000000
+/usr/sbin/diodload                     0.0000000    26.000000
+/usr/sbin/mpt-status                   0.0000000     6.666667
+/usr/sbin/th-cmd                       0.0000000    56.666667
+64,6,30,0,3,1,5,0,0

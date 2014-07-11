@@ -1,0 +1,579 @@
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02880489 
+
+                                           score         size
+/usr/bin/grib_convert                  1.0000000   142.333333
+/usr/bin/gmrun                         0.6666667   146.000000
+/usr/bin/gosmore                       0.6666667 30795.000000
+/usr/bin/isofilter2                    0.6666667   641.333333
+/usr/bin/t_coffee                      0.6666667 24989.000000
+/usr/bin/usepackage                    0.6666667    32.000000
+/usr/games/bi2cf                       0.6666667    23.333333
+/usr/games/jumpnbump                   0.6666667  1243.000000
+/usr/lib/ants/Atropos                  0.6666667    65.666667
+/usr/bin/cdrwtool                      0.3333333  6075.000000
+/usr/bin/dckey                         0.3333333 20459.666667
+/bin/upsc                              0.0000000    33.333333
+/usr/bin/amap                          0.0000000     2.333333
+/usr/bin/catdump                       0.0000000     6.000000
+/usr/bin/dcm_diff                      0.0000000     5.000000
+/usr/bin/e-P/usr/bin/afs_compile_et    0.0000000    17.000000
+/usr/bin/emms-print-metadata           0.0000000     1.666667
+/usr/bin/gman                          0.0000000   203.000000
+/usr/bin/hatari-winuae                 0.0000000   431.000000
+/usr/bin/isofilter0                    0.0000000   477.333333
+/usr/bin/jbofihe                       0.0000000     9.333333
+/usr/bin/lcrack                        0.0000000    75.000000
+/usr/bin/ncap                          0.0000000   122.000000
+/usr/bin/otf2bdf                       0.0000000   282.333333
+/usr/bin/pda                           0.0000000     1.333333
+/usr/bin/redis-check-dump              0.0000000    72.333333
+/usr/bin/sfte                          0.0000000    10.666667
+/usr/bin/swab                          0.0000000   595.000000
+/usr/bin/trisetcmp                     0.0000000    24.333333
+/usr/bin/ts_packet_insert              0.0000000     4.666667
+/usr/bin/tslmendian                    0.0000000    18.000000
+/usr/lib/ksplice-objmanip              0.0000000    85.666667
+/usr/lib/libatlas-test/xcasum          0.0000000     2.666667
+/usr/lib/magicrescue/tools/textextract 0.0000000     7.666667
+/usr/lib/nagios/plugins/check_game     0.0000000     1.666667
+/usr/lib/qingy/qingy-DirectFB          0.0000000    21.333333
+/usr/sbin/sanlock                      0.0000000     1.500000
+64,2,26,1,2,0,8,1,1
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 0.001  100
+
+- best performance: 0.02899041 
+
+                                        score         size
+/usr/bin/extract_fastq              1.0000000    48.000000
+/usr/bin/grib_convert               1.0000000   142.333333
+/usr/bin/sfte                       1.0000000    10.666667
+/usr/bin/hxnum                      0.6666667     8.000000
+/usr/bin/setupnash2                 0.6666667    10.000000
+/usr/bin/vadm                       0.6666667   551.000000
+/usr/bin/wmf                        0.6666667    30.333333
+/usr/lib/juman/makepat              0.6666667    15.666667
+/usr/lib/libatlas-test/xcasum       0.6666667     2.666667
+/usr/sbin/th-cmd                    0.6666667    56.666667
+/usr/bin/db5.1_sql                  0.3333333    14.333333
+/usr/bin/fst-compare                0.3333333    56.000000
+/usr/bin/gtk-theme-switch2          0.3333333     6.333333
+/usr/bin/hxunpipe                   0.3333333  1718.333333
+/usr/bin/jack_netsource             0.3333333    24.666667
+/usr/bin/macro1                     0.3333333  1622.000000
+/usr/bin/snooper                    0.3333333    60.333333
+/usr/bin/sweepgen                   0.3333333     5.666667
+/usr/bin/amap                       0.0000000     2.333333
+/usr/bin/chrpath                    0.0000000    20.000000
+/usr/bin/fastx_quality_stats        0.0000000    21.666667
+/usr/bin/fenix-fxc                  0.0000000    71.333333
+/usr/bin/ftpcopy                    0.0000000    12.333333
+/usr/bin/garmin_gmap                0.0000000    31.666667
+/usr/bin/hatari-winuae              0.0000000   431.000000
+/usr/bin/isofilter                  0.0000000  5080.000000
+/usr/bin/jack_midi_latency_test     0.0000000     8.666667
+/usr/bin/jbofihe                    0.0000000     9.333333
+/usr/bin/ldns-update                0.0000000     1.666667
+/usr/bin/lookbib                    0.0000000   264.000000
+/usr/bin/mincconvert                0.0000000    68.000000
+/usr/bin/minisat                    0.0000000    27.000000
+/usr/bin/mksource                   0.0000000   982.000000
+/usr/bin/ncap                       0.0000000   122.000000
+/usr/bin/pcapreport                 0.0000000    10.000000
+/usr/bin/perm3                      0.0000000   932.000000
+/usr/bin/rec2csv                    0.0000000 18348.000000
+/usr/bin/regconvert                 0.0000000     5.333333
+/usr/bin/tcucodec                   0.0000000  2623.333333
+/usr/bin/tslmpack                   0.0000000     9.333333
+/usr/lib/mapnik/2.0/input/osm.input 0.0000000     2.000000
+/usr/lib/tigr-glimmer/build-icm     0.0000000  2565.666667
+/usr/lib/uhd/tests/convert_test     0.0000000 14914.000000
+/usr/sbin/mpt-status                0.0000000     6.666667
+64,3,26,1,8,4,7,2,3
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 0.001  100
+
+- best performance: 0.02818597 
+
+                                           score         size
+/usr/bin/ctnnetwork                    1.0000000    22.000000
+/usr/bin/pforth                        1.0000000   364.000000
+/usr/bin/gosmore                       0.6666667 30795.000000
+/usr/bin/hime-setup                    0.6666667     8.000000
+/usr/bin/sfte                          0.6666667    10.666667
+/usr/bin/gman                          0.3333333   203.000000
+/usr/bin/jack_netsource                0.3333333    24.666667
+/usr/bin/macro1                        0.3333333  1622.000000
+/usr/bin/pbesconstelm                  0.3333333    44.666667
+/usr/bin/sweepgen                      0.3333333     5.666667
+/usr/bin/tcucodec                      0.3333333  2623.333333
+/usr/bin/xppaut                        0.3333333    93.666667
+/usr/games/jumpnbump                   0.3333333  1243.000000
+/usr/lib/juman/makeint                 0.3333333     7.000000
+/usr/lib/libraw/dcraw_emu              0.3333333  1455.333333
+/usr/bin/amap                          0.0000000     2.333333
+/usr/bin/db5.1_sql                     0.0000000    14.333333
+/usr/bin/e-P/usr/bin/afs_compile_et    0.0000000    17.000000
+/usr/bin/efix                          0.0000000   815.666667
+/usr/bin/extract_fastq                 0.0000000    48.000000
+/usr/bin/garlic                        0.0000000  2895.000000
+/usr/bin/hxnum                         0.0000000     8.000000
+/usr/bin/jack_midi_latency_test        0.0000000     8.666667
+/usr/bin/jbofihe                       0.0000000     9.333333
+/usr/bin/m68hc11-gcov                  0.0000000    35.333333
+/usr/bin/mpegcat                       0.0000000     7.333333
+/usr/bin/perm3                         0.0000000   932.000000
+/usr/bin/rec2csv                       0.0000000 18348.000000
+/usr/bin/regconvert                    0.0000000     5.333333
+/usr/bin/ts_packet_insert              0.0000000     4.666667
+/usr/bin/txt2ti3                       0.0000000    36.000000
+/usr/lib/magicrescue/tools/textextract 0.0000000     7.666667
+/usr/lib/nagios/plugins/check_game     0.0000000     1.666667
+/usr/lib/sssd/sssd/ldap_child          0.0000000  3856.333333
+/usr/sbin/mpt-status                   0.0000000     6.666667
+64,2,20,2,10,0,3,0,2
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02819402 
+
+                                           score        size
+/usr/lib/ksplice-objmanip              1.0000000   85.666667
+/usr/bin/faust                         0.6666667  952.333333
+/usr/bin/grib_convert                  0.6666667  142.333333
+/usr/bin/grolbp                        0.6666667 5887.666667
+/usr/bin/otf2bdf                       0.6666667  282.333333
+/usr/lib/qingy/qingy-DirectFB          0.6666667   21.333333
+/usr/bin/autogrid4                     0.3333333  514.333333
+/usr/bin/shape                         0.3333333 2842.666667
+/usr/bin/skyeye                        0.3333333   17.666667
+/usr/bin/snooper                       0.3333333   60.333333
+/usr/bin/tslmendian                    0.3333333   18.000000
+/usr/lib/ants/Atropos                  0.3333333   65.666667
+/usr/sbin/plpfuse                      0.3333333   14.333333
+/usr/bin/amap                          0.0000000    2.333333
+/usr/bin/catdump                       0.0000000    6.000000
+/usr/bin/cmph                          0.0000000   15.000000
+/usr/bin/emms-print-metadata           0.0000000    1.666667
+/usr/bin/fastx_clipper                 0.0000000    6.666667
+/usr/bin/fenix-fxc                     0.0000000   71.333333
+/usr/bin/fst-compare                   0.0000000   56.000000
+/usr/bin/ftpcopy                       0.0000000   12.333333
+/usr/bin/jack_netsource                0.0000000   24.666667
+/usr/bin/lcrack                        0.0000000   75.000000
+/usr/bin/macro1                        0.0000000 1622.000000
+/usr/bin/mpegcat                       0.0000000    7.333333
+/usr/bin/mpgtx                         0.0000000    8.333333
+/usr/bin/oligotm                       0.0000000    2.000000
+/usr/bin/probcons-RNA                  0.0000000  235.000000
+/usr/bin/setupnash2                    0.0000000   10.000000
+/usr/bin/ts_packet_insert              0.0000000    4.666667
+/usr/bin/tslmpack                      0.0000000    9.333333
+/usr/bin/unadf                         0.0000000   10.333333
+/usr/bin/ymplayer                      0.0000000   10.666667
+/usr/bin/ytasm                         0.0000000  260.666667
+/usr/lib/ants/ANTSIntegrateVectorField 0.0000000  497.333333
+/usr/lib/gwaei/kpengine                0.0000000    7.666667
+/usr/lib/libatlas-test/xcasum          0.0000000    2.666667
+/usr/lib/magicrescue/tools/textextract 0.0000000    7.666667
+/usr/lib/mapnik/2.0/input/osm.input    0.0000000    2.000000
+/usr/lib/tigr-glimmer/build-icm        0.0000000 2565.666667
+/usr/lib/uhd/tests/addr_test           0.0000000 7936.666667
+/usr/sbin/sredird                      0.0000000   46.000000
+64,6,29,1,7,2,5,0,1
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 0.001 1000
+
+- best performance: 0.02560725 
+
+                                           score         size
+/usr/bin/mincconvert                   1.0000000    68.000000
+/usr/bin/sfte                          1.0000000    10.666667
+/usr/bin/pbesconstelm                  0.6666667    44.666667
+/usr/bin/sfmtcvt                       0.6666667     7.333333
+/usr/bin/wmf                           0.6666667    30.333333
+/usr/lib/libatlas-test/xcasum          0.6666667     2.666667
+/usr/bin/fst-compare                   0.3333333    56.000000
+/usr/bin/jack_netsource                0.3333333    24.666667
+/usr/bin/vadm                          0.3333333   551.000000
+/usr/lib/juman/makeint                 0.3333333     7.000000
+/usr/sbin/th-cmd                       0.3333333    56.666667
+/usr/bin/amap                          0.0000000     2.333333
+/usr/bin/applycal                      0.0000000    31.666667
+/usr/bin/binhex                        0.0000000    61.666667
+/usr/bin/catdump                       0.0000000     6.000000
+/usr/bin/chrpath                       0.0000000    20.000000
+/usr/bin/cmph                          0.0000000    15.000000
+/usr/bin/dia-normal                    0.0000000 20393.000000
+/usr/bin/e-P/usr/bin/afs_compile_et    0.0000000    17.000000
+/usr/bin/ftpcopy                       0.0000000    12.333333
+/usr/bin/garlic                        0.0000000  2895.000000
+/usr/bin/garmin_gmap                   0.0000000    31.666667
+/usr/bin/lcrack                        0.0000000    75.000000
+/usr/bin/ldns-update                   0.0000000     1.666667
+/usr/bin/mdiff                         0.0000000   164.333333
+/usr/bin/mpgtx                         0.0000000     8.333333
+/usr/bin/ncecat                        0.0000000    31.333333
+/usr/bin/osmpbf-outline                0.0000000    13.333333
+/usr/bin/pcapreport                    0.0000000    10.000000
+/usr/bin/rdx                           0.0000000   896.333333
+/usr/bin/smujajgau                     0.0000000    15.666667
+/usr/bin/ts_packet_insert              0.0000000     4.666667
+/usr/bin/usepackage                    0.0000000    32.000000
+/usr/bin/xppaut                        0.0000000    93.666667
+/usr/bin/xview_xgettext                0.0000000    24.666667
+/usr/games/alex4                       0.0000000     2.000000
+/usr/lib/magicrescue/tools/textextract 0.0000000     7.666667
+/usr/lib/qingy/qingy-DirectFB          0.0000000    21.333333
+/usr/lib/squid/ip_user_check           0.0000000     1.500000
+/usr/sbin/mpt-status                   0.0000000     6.666667
+/usr/sbin/sredird                      0.0000000    46.000000
+64,3,30,3,5,1,4,0,2
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02500845 
+
+                                          score         size
+/usr/bin/grolbp                       1.0000000  5887.666667
+/usr/lib/libraw/dcraw_emu             1.0000000  1455.333333
+/usr/bin/asfxload                     0.6666667    78.333333
+/usr/lib/gmt/bin/ps2raster            0.6666667    20.333333
+/usr/bin/jack_midi_latency_test       0.3333333     8.666667
+/usr/bin/macro1                       0.3333333  1622.000000
+/usr/bin/pforth                       0.3333333   364.000000
+/usr/bin/shape                        0.3333333  2842.666667
+/usr/bin/xjinfo                       0.3333333     6.666667
+/usr/bin/amap                         0.0000000     2.333333
+/usr/bin/dcm_diff                     0.0000000     5.000000
+/usr/bin/dotur                        0.0000000     5.000000
+/usr/bin/e-P/usr/bin/afs_compile_et   0.0000000    17.000000
+/usr/bin/fst-compare                  0.0000000    56.000000
+/usr/bin/ftpcopy                      0.0000000    12.333333
+/usr/bin/hxnum                        0.0000000     8.000000
+/usr/bin/hxunpipe                     0.0000000  1718.333333
+/usr/bin/jbofihe                      0.0000000     9.333333
+/usr/bin/ldns-keyfetcher              0.0000000     1.000000
+/usr/bin/lookbib                      0.0000000   264.000000
+/usr/bin/mpegcat                      0.0000000     7.333333
+/usr/bin/oligotm                      0.0000000     2.000000
+/usr/bin/otf2bdf                      0.0000000   282.333333
+/usr/bin/rec2csv                      0.0000000 18348.000000
+/usr/bin/t_coffee                     0.0000000 24989.000000
+/usr/bin/tslmendian                   0.0000000    18.000000
+/usr/bin/vadm                         0.0000000   551.000000
+/usr/bin/xppaut                       0.0000000    93.666667
+/usr/games/freesci                    0.0000000   155.333333
+/usr/lib/ants/Atropos                 0.0000000    65.666667
+/usr/lib/nagios/plugins/check_game    0.0000000     1.666667
+/usr/lib/tigr-glimmer/build-icm       0.0000000  2565.666667
+/usr/lib/uhd/tests/addr_test          0.0000000  7936.666667
+/usr/lib/wmcoincoin/wmcoincoin_player 0.0000000     7.333333
+/usr/sbin/sanlock                     0.0000000     1.500000
+64,2,26,2,5,1,2,1,2
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 0.001 1000
+
+- best performance: 0.02259312 
+
+                                           score         size
+/usr/bin/extract_fastq                 1.0000000    48.000000
+/usr/bin/gman                          1.0000000   203.000000
+/usr/bin/grib_convert                  1.0000000   142.333333
+/usr/bin/juman                         1.0000000    46.000000
+/usr/bin/ytasm                         1.0000000   260.666667
+/usr/bin/autogrid4                     0.6666667   514.333333
+/usr/bin/lookbib                       0.6666667   264.000000
+/usr/bin/scm                           0.6666667  4297.000000
+/usr/games/bi2cf                       0.6666667    23.333333
+/usr/lib/ants/Atropos                  0.6666667    65.666667
+/usr/lib/gmt/bin/ps2raster             0.6666667    20.333333
+/usr/bin/tcucodec                      0.3333333  2623.333333
+/usr/games/jumpnbump                   0.3333333  1243.000000
+/usr/bin/afs_compile_et                0.0000000    27.333333
+/usr/bin/amap                          0.0000000     2.333333
+/usr/bin/cjet                          0.0000000     3.000000
+/usr/bin/cmph                          0.0000000    15.000000
+/usr/bin/dcm_diff                      0.0000000     5.000000
+/usr/bin/dia-normal                    0.0000000 20393.000000
+/usr/bin/e-P/usr/bin/afs_compile_et    0.0000000    17.000000
+/usr/bin/emms-print-metadata           0.0000000     1.666667
+/usr/bin/h5dump                        0.0000000  5747.333333
+/usr/bin/hatari-winuae                 0.0000000   431.000000
+/usr/bin/jbofihe                       0.0000000     9.333333
+/usr/bin/lcrack                        0.0000000    75.000000
+/usr/bin/ldns-keyfetcher               0.0000000     1.000000
+/usr/bin/m68hc11-gcov                  0.0000000    35.333333
+/usr/bin/mincconvert                   0.0000000    68.000000
+/usr/bin/minisat                       0.0000000    27.000000
+/usr/bin/pcapreport                    0.0000000    10.000000
+/usr/bin/pda                           0.0000000     1.333333
+/usr/bin/perm3                         0.0000000   932.000000
+/usr/bin/redis-check-dump              0.0000000    72.333333
+/usr/bin/smujajgau                     0.0000000    15.666667
+/usr/bin/svm-predict                   0.0000000     3.000000
+/usr/bin/swab                          0.0000000   595.000000
+/usr/bin/wmwave                        0.0000000    23.000000
+/usr/bin/xjinfo                        0.0000000     6.666667
+/usr/lib/ants/ANTSIntegrateVectorField 0.0000000   497.333333
+64,4,26,0,2,0,6,2,5
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 0.001 1000
+
+- best performance: 0.02520403 
+
+                                          score         size
+/usr/bin/gman                         1.0000000   203.000000
+/usr/bin/grolbp                       1.0000000  5887.666667
+/usr/bin/trisetcmp                    1.0000000    24.333333
+/usr/bin/vgrep                        1.0000000   233.666667
+/usr/bin/asfxload                     0.6666667    78.333333
+/usr/bin/mtbl_dump                    0.6666667     7.666667
+/usr/bin/regconvert                   0.6666667     5.333333
+/usr/bin/scm                          0.6666667  4297.000000
+/usr/bin/vadm                         0.6666667   551.000000
+/usr/lib/ants/Atropos                 0.6666667    65.666667
+/usr/bin/image_to_j2k                 0.3333333    33.000000
+/usr/bin/jack_netsource               0.3333333    24.666667
+/usr/bin/macro1                       0.3333333  1622.000000
+/usr/bin/skyeye                       0.3333333    17.666667
+/usr/bin/sweepgen                     0.3333333     5.666667
+/usr/bin/tessa                        0.3333333    49.333333
+/usr/bin/ytasm                        0.3333333   260.666667
+/usr/bin/applycal                     0.0000000    31.666667
+/usr/bin/db5.1_sql                    0.0000000    14.333333
+/usr/bin/dcm_diff                     0.0000000     5.000000
+/usr/bin/e-P/usr/bin/afs_compile_et   0.0000000    17.000000
+/usr/bin/fastx_clipper                0.0000000     6.666667
+/usr/bin/fenix-fxc                    0.0000000    71.333333
+/usr/bin/garmin_gchart                0.0000000    22.333333
+/usr/bin/gtk-theme-switch2            0.0000000     6.333333
+/usr/bin/h5dump                       0.0000000  5747.333333
+/usr/bin/hatari-winuae                0.0000000   431.000000
+/usr/bin/isofilter0                   0.0000000   477.333333
+/usr/bin/isofilter2                   0.0000000   641.333333
+/usr/bin/jack_midi_latency_test       0.0000000     8.666667
+/usr/bin/morseLinux                   0.0000000     5.333333
+/usr/bin/mpgtx                        0.0000000     8.333333
+/usr/bin/rifiuti                      0.0000000     9.333333
+/usr/bin/setupnash2                   0.0000000    10.000000
+/usr/bin/t_coffee                     0.0000000 24989.000000
+/usr/bin/tcucodec                     0.0000000  2623.333333
+/usr/bin/wmwave                       0.0000000    23.000000
+/usr/bin/ymplayer                     0.0000000    10.666667
+/usr/lib/mapnik/2.0/input/osm.input   0.0000000     2.000000
+/usr/lib/nagios/plugins/check_game    0.0000000     1.666667
+/usr/lib/tigr-glimmer/build-icm       0.0000000  2565.666667
+/usr/lib/wmcoincoin/wmcoincoin_player 0.0000000     7.333333
+/usr/sbin/ftp-proxy                   0.0000000    55.666667
+64,5,26,1,7,2,6,2,4
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 0.001  100
+
+- best performance: 0.02999445 
+
+                                        score         size
+/usr/bin/pforth                     1.0000000   364.000000
+/usr/bin/snooper                    1.0000000    60.333333
+/usr/lib/open-axiom/lib/view2D      1.0000000     9.333333
+/usr/bin/gman                       0.6666667   203.000000
+/usr/bin/gmrun                      0.6666667   146.000000
+/usr/bin/juman                      0.6666667    46.000000
+/usr/bin/setupnash2                 0.6666667    10.000000
+/usr/bin/asmail                     0.3333333     6.000000
+/usr/bin/cjet                       0.3333333     3.000000
+/usr/bin/gtk-theme-switch2          0.3333333     6.333333
+/usr/lib/ksplice-objmanip           0.3333333    85.666667
+/usr/sbin/ftp-proxy                 0.3333333    55.666667
+/usr/bin/afs_compile_et             0.0000000    27.333333
+/usr/bin/awardeco                   0.0000000     9.000000
+/usr/bin/cmph                       0.0000000    15.000000
+/usr/bin/dotur                      0.0000000     5.000000
+/usr/bin/image_to_j2k               0.0000000    33.000000
+/usr/bin/jack_midi_latency_test     0.0000000     8.666667
+/usr/bin/jbofihe                    0.0000000     9.333333
+/usr/bin/mincconvert                0.0000000    68.000000
+/usr/bin/minisat                    0.0000000    27.000000
+/usr/bin/ncap                       0.0000000   122.000000
+/usr/bin/oligotm                    0.0000000     2.000000
+/usr/bin/osmpbf-outline             0.0000000    13.333333
+/usr/bin/perm3                      0.0000000   932.000000
+/usr/bin/probcons-RNA               0.0000000   235.000000
+/usr/bin/rec2csv                    0.0000000 18348.000000
+/usr/bin/sfmtcvt                    0.0000000     7.333333
+/usr/bin/tessa                      0.0000000    49.333333
+/usr/bin/trisetcmp                  0.0000000    24.333333
+/usr/bin/ts_packet_insert           0.0000000     4.666667
+/usr/bin/tslmpack                   0.0000000     9.333333
+/usr/bin/wmwave                     0.0000000    23.000000
+/usr/bin/xa                         0.0000000    22.333333
+/usr/bin/xjinfo                     0.0000000     6.666667
+/usr/bin/ymplayer                   0.0000000    10.666667
+/usr/lib/libraw/unprocessed_raw     0.0000000    12.666667
+/usr/lib/mapnik/2.0/input/osm.input 0.0000000     2.000000
+/usr/sbin/sanlock                   0.0000000     1.500000
+64,2,27,2,5,1,4,0,3
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.02839362 
+
+                                           score        size
+/usr/bin/isofilter                     1.0000000 5080.000000
+/usr/bin/snooper                       1.0000000   60.333333
+/bin/upsc                              0.6666667   33.333333
+/usr/bin/hime-setup                    0.6666667    8.000000
+/usr/bin/isofilter0                    0.6666667  477.333333
+/usr/bin/isofilter2                    0.6666667  641.333333
+/usr/bin/otf2bdf                       0.6666667  282.333333
+/usr/bin/usepackage                    0.6666667   32.000000
+/usr/lib/gmt/bin/ps2raster             0.6666667   20.333333
+/usr/lib/libraw/dcraw_emu              0.6666667 1455.333333
+/usr/lib/qingy/qingy-DirectFB          0.6666667   21.333333
+/usr/sbin/diodload                     0.6666667   26.000000
+/usr/bin/binhex                        0.3333333   61.666667
+/usr/bin/image_to_j2k                  0.3333333   33.000000
+/usr/bin/mtbl_dump                     0.3333333    7.666667
+/usr/bin/retrv                         0.3333333  243.666667
+/usr/bin/vadm                          0.3333333  551.000000
+/usr/bin/chrpath                       0.0000000   20.000000
+/usr/bin/db5.1_sql                     0.0000000   14.333333
+/usr/bin/dcm_diff                      0.0000000    5.000000
+/usr/bin/e-P/usr/bin/afs_compile_et    0.0000000   17.000000
+/usr/bin/efix                          0.0000000  815.666667
+/usr/bin/fastx_clipper                 0.0000000    6.666667
+/usr/bin/fastx_quality_stats           0.0000000   21.666667
+/usr/bin/fcrackzipinfo                 0.0000000    1.666667
+/usr/bin/fenix-fxc                     0.0000000   71.333333
+/usr/bin/ftpcopy                       0.0000000   12.333333
+/usr/bin/lookbib                       0.0000000  264.000000
+/usr/bin/minisat                       0.0000000   27.000000
+/usr/bin/pda                           0.0000000    1.333333
+/usr/bin/probcons-RNA                  0.0000000  235.000000
+/usr/bin/shape                         0.0000000 2842.666667
+/usr/bin/tslmendian                    0.0000000   18.000000
+/usr/bin/xppaut                        0.0000000   93.666667
+/usr/bin/ymplayer                      0.0000000   10.666667
+/usr/games/alex4                       0.0000000    2.000000
+/usr/lib/juman/makepat                 0.0000000   15.666667
+/usr/lib/lbdb/vcquery                  0.0000000   20.333333
+/usr/lib/magicrescue/tools/textextract 0.0000000    7.666667
+/usr/lib/wmcoincoin/wmcoincoin_player  0.0000000    7.333333
+/usr/sbin/sredird                      0.0000000   46.000000
+64,5,24,3,5,0,10,0,2
+
+Parameter tuning of 'svm':
+
+- sampling method: 10-fold cross validation 
+
+- best parameters:
+ gamma cost
+ 1e-04 1000
+
+- best performance: 0.0260145 
+
+                                              score         size
+/usr/bin/pforth                           1.0000000   364.000000
+/usr/bin/shape                            1.0000000  2842.666667
+/usr/bin/tinyscheme                       1.0000000 23172.666667
+/usr/lib/ants/ANTSIntegrateVectorField    1.0000000   497.333333
+/usr/lib/hobbit/server/bin/hobbitd_client 1.0000000 47491.333333
+/usr/lib/libraw/dcraw_emu                 1.0000000  1455.333333
+/usr/lib/libraw/unprocessed_raw           1.0000000    12.666667
+/usr/bin/faust                            0.6666667   952.333333
+/usr/bin/pbesconstelm                     0.6666667    44.666667
+/usr/bin/scm                              0.6666667  4297.000000
+/usr/games/bi2cf                          0.6666667    23.333333
+/usr/games/jumpnbump                      0.6666667  1243.000000
+/usr/lib/ksplice-objmanip                 0.6666667    85.666667
+/usr/lib/tigr-glimmer/build-icm           0.6666667  2565.666667
+/usr/bin/aliki                            0.3333333    26.000000
+/usr/bin/cxref                            0.3333333   115.000000
+/usr/bin/dckey                            0.3333333 20459.666667
+/usr/lib/libatlas-test/xcasum             0.3333333     2.666667
+/usr/bin/awardeco                         0.0000000     9.000000
+/usr/bin/emms-print-metadata              0.0000000     1.666667
+/usr/bin/fastx_quality_stats              0.0000000    21.666667
+/usr/bin/h5dump                           0.0000000  5747.333333
+/usr/bin/hatari-winuae                    0.0000000   431.000000
+/usr/bin/isofilter0                       0.0000000   477.333333
+/usr/bin/m68hc11-gcov                     0.0000000    35.333333
+/usr/bin/ncecat                           0.0000000    31.333333
+/usr/bin/osmpbf-outline                   0.0000000    13.333333
+/usr/bin/redis-check-dump                 0.0000000    72.333333
+/usr/bin/rgb2pat                          0.0000000     5.333333
+/usr/bin/sfmtcvt                          0.0000000     7.333333
+/usr/bin/svm-predict                      0.0000000     3.000000
+/usr/bin/swab                             0.0000000   595.000000
+/usr/bin/usepackage                       0.0000000    32.000000
+/usr/bin/xa                               0.0000000    22.333333
+/usr/bin/xview_xgettext                   0.0000000    24.666667
+/usr/bin/ymplayer                         0.0000000    10.666667
+/usr/lib/gwaei/kpengine                   0.0000000     7.666667
+/usr/lib/lbdb/vcquery                     0.0000000    20.333333
+/usr/lib/magicrescue/tools/textextract    0.0000000     7.666667
+/usr/lib/uhd/tests/addr_test              0.0000000  7936.666667
+64,4,22,1,4,0,7,1,7
