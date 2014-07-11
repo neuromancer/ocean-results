@@ -17,8 +17,9 @@ vuln_filename = sys.argv[2]
 buggy_train_filename = "buggy_train.csv.gz"
 robust_train_filename = "robust_train.csv.gz"
 
-buggy_test_filename = "buggy_test.csv.gz"
-robust_test_filename = "robust_test.csv.gz"
+#buggy_test_filename = "buggy_test.csv.gz"
+#robust_test_filename = "robust_test.csv.gz"
+test_filename = "test.csv.gz"
 
 # first, we read the list of vulnerable programs
 with gzip.open(vuln_filename, 'rb') as csvfile1:
@@ -38,6 +39,7 @@ with gzip.open(data_filename, 'rb') as csvfile1:
         norm_programs[row[0]] = 1
 
 train_prop = 0.75
+max_train_size = 5000
 #test_prop  = 1.0 - train_prop
 
 vuln_size = len(vuln_programs)
@@ -55,6 +57,9 @@ test_norm_programs  = norm_sample[int(train_prop*norm_size):]
 #print train_vuln_programs
 #print train_norm_programs
 
+buggy_train_traces = []
+robust_train_traces = []
+
 # train data
 # we read the list of all programs and traces
 with gzip.open(data_filename, 'rb') as csvfile1:
@@ -67,10 +72,18 @@ with gzip.open(data_filename, 'rb') as csvfile1:
           continue
 
         if (row[0] in train_vuln_programs):
-          csvfile2.write("\t".join(row)+"\n")
+          buggy_train_traces.append("\t".join(row)+"\n")
+          #csvfile2.write("\t".join(row)+"\n")
        
         elif (row[0] in train_norm_programs):
-          csvfile3.write("\t".join(row)+"\n")
+          robust_train_traces.append("\t".join(row)+"\n")
+          #csvfile3.write("\t".join(row)+"\n")
+
+      for i in random.sample(range(len(buggy_train_traces)), int(max_train_size/2)):
+        csvfile2.write(buggy_train_traces[i])
+
+      for i in random.sample(range(len(robust_train_traces)), int(max_train_size/2)):
+        csvfile3.write(robust_train_traces[i])
 
 
 # test data
@@ -80,8 +93,8 @@ tmp = []
 program_count = dict() 
 
 with gzip.open(data_filename, 'rb') as csvfile1:
-  with gzip.open(buggy_test_filename, 'wb') as csvfile2:
-    with gzip.open(robust_test_filename, 'wb') as csvfile3:
+  with gzip.open(test_filename, 'wb') as f:
+      #with gzip.open(robust_test_filename, 'wb') as csvfile3:
       reader1 = csv.reader(csvfile1, delimiter='\t')
 
       for row in reader1:
@@ -89,11 +102,7 @@ with gzip.open(data_filename, 'rb') as csvfile1:
           continue
           #assert(0)
 
-        if (row[0] in test_vuln_programs):
-          f = csvfile2
-        elif (row[0] in test_norm_programs):
-          f = csvfile3
-        else:
+        if not ((row[0] in test_vuln_programs) or (row[0] in test_norm_programs)):
           continue
      
         if row[0] in program_count:
@@ -109,39 +118,3 @@ with gzip.open(data_filename, 'rb') as csvfile1:
         else:
           tmp.append("\t".join(row))
           program_count[row[0]] = 1
-
- 
-#print(vuln_sample)
-#print(norm_sample)
-
-
-#print programs.keys()
-#print len(programs)
-
-assert(0)
-
-with open(sys.argv[1], 'rb') as csvfile1:
-    reader1 = csv.reader(csvfile1, delimiter='\t')
-  
-    for row in reader1:
-      if (len(row) <> 3):
-        continue
-        #assert(0)
-
-      assert(not (" " in row[0]))
-      if row[0] in programs:
-        n = programs[row[0]]
-        if n < 3:
-          tmp.append("\t".join(row))
-          programs[row[0]] = n + 1
-        
-        if n == 2:
-          if not ("vulnerable" in tmp[0] or "vulnerable" in tmp[2] or "vulnerable" in tmp[1]):
-            for line in tmp:
-              print line
-          tmp = []
-      else:
-        tmp.append("\t".join(row))
-        programs[row[0]] = 1
- 
-
