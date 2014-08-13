@@ -3,8 +3,6 @@ options(warn=-1)
 msg.trap <- capture.output( suppressMessages( library("e1071") ))
 msg.trap <- capture.output( suppressMessages( library("tm") ))
 msg.trap <- capture.output( suppressMessages( library("randomForest") ))
-#msg.trap <- capture.output( suppressMessages( library("gbm") ))
-#library("RWeka")
 options(mc.cores=10)
 #options(mc.cores=1)
 
@@ -36,7 +34,6 @@ options(stringsAsFactors=F)
 mycon = gzcon(gzfile(paste(dir, "vulnerable_programs.csv.gz", sep="/"), open="r"))
 vulnerable_programs = read.csv(textConnection(readLines(mycon)), sep="\t", header = F)
 
-#if (! ("mycon" %in% ls())) {
 mycon = gzcon(gzfile(paste(dir, "buggy_train.csv.gz", sep="/"), open="r"))  
 buggy_program_events = read.csv(textConnection(readLines(mycon)), sep="\t", header = F)
 
@@ -139,33 +136,12 @@ r_evs_dm_df[r_evs_dm_df>cutoff] = cutoff
 #print(names(r_evs_dm_df))
 #r_evs_dm_df = r_evs_dm_df[,setdiff(r_evs_vars,evs_vars_to_remove)]
 real_test = r_evs_dm_df
-
-#print(dim(real_test))
-
-#quit()
-
-#msizes = seq(600,0,-100)
-#msizes = c(msize) #seq(0,600,100)
-
-res_mut_only = c()
-res_mut_evs  = c()
-
-#for (n in msizes) {
-
-#nrep = 1
-mut_only_err = 0.0
-mut_evs_err  = 0.0 
-  
+ 
  
 robust_cases = aug_robust_cases#[aug_robust_cases$size >= n,]#, names(aug_robust_cases) != "size"]
 buggy_cases  = aug_buggy_cases#[aug_buggy_cases$size >=n,]
 
-#for (r in 1:nrep) {
-    
-#gc() 
-
 buggy_train = buggy_cases#[buggy_cases$program %in% train_programs,]#,names(buggy_cases) != "program"]
-
 robust_train = robust_cases#[robust_cases$program %in% train_programs,]#,names(robust_cases) != "program"]
   
 train_size = min(nrow(buggy_train), nrow(robust_train))
@@ -177,17 +153,16 @@ xy_train = train[,varnot0]
 
 x_real_test = real_test[,setdiff(varnot0,c("class"))]
 
-
-tcont = tune.control(sampling='fix')
+#tcont = tune.control(sampling='fix')
     
 to_train = xy_train
-#for (ntree in seq(500,500,500)) {
-ntree = 500
-#print(paste("ntree:", ntree))
+#ntree = 500
 
 #m = randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], importance=TRUE, ntree = ntree)
 #m = tune.knn(to_train[,names(to_train) != "class"], to_train[,"class"], k = 1:10)
 #m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], validation.x = to_test, validation.y = y_test, tunecontrol=tcont, importance=TRUE)
+
+#m = tune.randomForest(to_train[,names(to_train) != "class"], to_train[,"class"], importance=TRUE)
 m = tune.svm(class~., data = to_train, gamma = 10^(-5:-1), cost = 10^(-1:3))
 print(m)
 
@@ -195,25 +170,19 @@ print(m)
 model = m$best.model
 #print(model)
 
+#importance randomforest
 #imp =  round(importance(model),2)
 #inds = order(imp[,"B"], decreasing=T)
 #rownames(imp) = rownames(imp)[inds]
-#print(head(data.frame(imp[inds,"B"]),20)) 
-#print(head(data.frame(imp[inds,"R"]),20)) 
+#print(head(data.frame(imp[inds,"B"]),25)) 
+#print(head(data.frame(imp[inds,"R"]),25)) 
     
-    
+# importance svm
 tmp = t(abs(t(model$coefs) %*% model$SV))
 inds = sort(tmp, decreasing=TRUE, index.return = TRUE)$i
 print(names(tmp[inds,][1:25]))
 
-#z = predict(model,x_test)
-#result = data.frame(program = test_programs, trace=test_traces, pred=z)
-#print(result)
-#print(confusion(z,y_test)) 
-
 z = predict(model,x_real_test)
-#print(z)
-#print(sample_programs)   
 
 result = data.frame(program = sample_programs, pred=z)
 scores = data.frame(score=c())
@@ -258,21 +227,4 @@ for (sc in c(0,1/3,2/3,3/3)) {
 }
 
 write.table(t(c(cutoff, output)), stdout(), ,row.names=FALSE, col.names=FALSE, sep = ",")
-#print(c(cutoff, output))
 
-#}
-#print(z == "B")
-#print(sample_programs %in% vulnerable_programs[,1])    
-#print(scores[order(scores, decreasing=T),])
-   
-#mut_evs_err = mut_evs_err + m$best.performance
-#print(mut_evs_err / r)
-
-#}
-  
-#res_mut_only = c(res_mut_only, mut_only_err / nrep)
-#res_mut_evs = c(res_mut_evs, mut_evs_err / nrep)
-
-#}
-
-#print(data.frame(n=msizes, MutationOnly=res_mut_only, MutationEvents=res_mut_evs))
